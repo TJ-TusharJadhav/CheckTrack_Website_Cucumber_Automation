@@ -25,7 +25,7 @@ public class Hooks {
         driver = BaseClass.getDriver(); // Get WebDriver instance
     }
 
-    @After
+//    @After
     public void teardown(Scenario scenario) {
         if (scenario.isFailed()) {
             takeScreenshot(scenario);

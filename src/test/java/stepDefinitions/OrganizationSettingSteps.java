@@ -1,13 +1,22 @@
 package stepDefinitions;
 
 import io.cucumber.java.en.*;
+import pages.DashboardPage;
+import pages.LoginPage;
 import pages.OrganizationSettingPage;
 
 public class OrganizationSettingSteps {
 	OrganizationSettingPage OrganizationSetting = new OrganizationSettingPage();
+	DashboardPage Dashboard = new DashboardPage();
+	LoginPage loginPage = new LoginPage();
 	
-	@Given("I am on the Organization Settings page")
-	public void i_am_on_the_organization_settings_page() {
+	@Given("I am on the Organization Settings page {string} {string}")
+	public void i_am_on_the_organization_settings_page(String username, String password) throws InterruptedException {
+		loginPage.enterUsername(username);
+        loginPage.enterPassword(password);
+        loginPage.clickLogin();
+		Dashboard.clickmainManu();
+		Dashboard.clickOrganization_settings();
 	    
 	}
 
@@ -16,18 +25,21 @@ public class OrganizationSettingSteps {
 	    
 	}
 
-	@When("I click the edit icon next to Company Name")
-	public void i_click_the_edit_icon_next_to_company_name1() {
-	   
-	}
+//	@When("I click the edit icon next to Company Name")
+//	public void i_click_the_edit_icon_next_to_company_name1() {
+//		OrganizationSetting.click_EditIcon_IN_CompanyName();
+//	   
+//	}
 
 	@When("I enter {string} in the input field")
 	public void i_enter_in_the_input_field(String string) {
+		OrganizationSetting.click_EditTextField_IN_CompanyName(string);
 	    
 	}
 
 	@When("I click the Save button")
 	public void i_click_the_save_button() {
+		OrganizationSetting.click_SaveButton_IN_CompanyName();
 	    
 	}
 
@@ -36,8 +48,8 @@ public class OrganizationSettingSteps {
 	    
 	}
 
-	@Then("the new company name should be displayed")
-	public void the_new_company_name_should_be_displayed() {
+	@Then("the new company name should be displayed {string}")
+	public void the_new_company_name_should_be_displayed(String string) {
 	    
 	}
 

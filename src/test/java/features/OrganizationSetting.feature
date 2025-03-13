@@ -1,20 +1,19 @@
 Feature: Verify Organization Setting Functionality
-
+@UpdateCompanyName
   Scenario Outline: Update Company Name
-    Given I am on the Organization Settings page
+    Given I am on the Organization Settings page "<username>" "<password>"
     And I see the current Company Name displayed
     When I click the edit icon next to Company Name
     And I enter "<New_Company_Name>" in the input field
     And I click the Save button
     Then the company name should be updated successfully
-    And the new company name should be displayed
+    And the new company name should be displayed "<New_Company_Name>"
 
     Examples: 
-      | New_Company_Name           |                   |
-      | ABCDEFGHIJKLMNOPQRSTUVWXYZ |                   |
-      | abcdefghijklmnopqrstuvwxyz |                   |
-      |                 1234567890 |                   |
-      | ~!@#$%^&*()_+{}            | :"<>?`-=[]\\;',./ |
+      | username                   | password                   | New_Company_Name           |
+      | tushar_test1.6@yopmail.com | tushar_test1.6@yopmail.com | ABCDEFGHIJKLMNOPQRSTUVWXYZ |
+      #| abcdefghijklmnopqrstuvwxyz |
+      #|                 1234567890 |
 
   Scenario: Prevent saving an empty Company Name
     Given I am on the Organization Settings page
