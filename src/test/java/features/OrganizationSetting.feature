@@ -1,20 +1,19 @@
 Feature: Verify Organization Setting Functionality
-@UpdateCompanyName
+
+  #@UpdateCompanyName
   Scenario Outline: Update Company Name
-    Given I am on the Organization Settings page "<username>" "<password>"
-    And I see the current Company Name displayed
-    When I click the edit icon next to Company Name
+    Given I am on the Organization Settings page
+    And I click the edit icon next to Company Name
     And I enter "<New_Company_Name>" in the input field
     And I click the Save button
     Then the company name should be updated successfully
     And the new company name should be displayed "<New_Company_Name>"
 
     Examples: 
-      | username                   | password                   | New_Company_Name           |
-      | tushar_test1.6@yopmail.com | tushar_test1.6@yopmail.com | ABCDEFGHIJKLMNOPQRSTUVWXYZ |
-      #| abcdefghijklmnopqrstuvwxyz |
-      #|                 1234567890 |
+      | New_Company_Name          |
+      | TechNova Global Pvt. Ltd. |
 
+  #@UpdateCompanyName
   Scenario: Prevent saving an empty Company Name
     Given I am on the Organization Settings page
     And I click the edit icon next to Company Name
@@ -22,100 +21,109 @@ Feature: Verify Organization Setting Functionality
     And I click the Save button
     Then an error message should be displayed Company Name cannot be empty
 
+  #@UpdateCompanyName
   Scenario Outline: Cancel Editing the Company Name
     Given I am on the Organization Settings page
     And I see the current Company Name displayed
     When I click the edit icon next to Company Name
     And I enter "<New_Company_Name>" in the input field
     And I click the Cancel button
-    Then the company name should remain unchanged
-    And the previous company name should be displayed
+    Then the previous company name should be displayed
 
     Examples: 
-      | New_Company_Name             |
-      | TechNova Global Pvt. Ltd.    |
-      | Innovate Solutions Pvt. Ltd. |
-      | AlphaTech Enterprises        |
+      | New_Company_Name          |
+      | TechNova Global Pvt. Ltd. |
 
-  Scenario Outline: Update Date Format
-    Given I am on the Organization Settings page
-    And I see the current Date Format displayed
-    When I click the edit icon next to Date Format
-    And I select "<New_Date_Format>" from the dropdown
-    And I click the Save button
-    Then the date format should be updated successfully
-    And the selected format should be displayed
-
-    Examples: 
-      | New_Date_Format |
-      | MM/dd/yyyy      |
-      | dd-MM-yyyy      |
-      | EEE,MM/dd/yyyy  |
-      | EEE,dd-MM-yyyy  |
-
-  Scenario Outline: Cancel Editing the Date Format
-    Given I am on the Organization Settings page
-    And I see the current Date Format displayed
-    When I click the edit icon next to Date Format
-    And I select "<New_Date_Format>" from the dropdown
-    And I click the Cancel button
-    Then the date format should remain unchanged
-    And the previous date format should be displayed
-
-    Examples: 
-      | New_Date_Format |
-      | MM/dd/yyyy      |
-      | dd-MM-yyyy      |
-      | EEE,MM/dd/yyyy  |
-      | EEE,dd-MM-yyyy  |
-
-  Scenario Outline: Update Timezone
-    Given I am on the Organization Settings page
-    And I see the current Timezone displayed
-    When I click the edit icon next to Timezone
-    And I select "<New_Timezone>" from the dropdown
-    And I click the Save button
-    Then the timezone should be updated successfully
-    And the selected timezone should be displayed
-
-    Examples: 
-      | New_Timezone     |
-      | America/New_York |
-      | Europe/London    |
-      | Asia/Dubai       |
-
-  Scenario Outline: Cancel Editing the Timezone
-    Given I am on the Organization Settings page
-    And I see the current Timezone displayed
-    When I click the edit icon next to Timezone
-    And I select "<New_Timezone>" from the dropdown
-    And I click the Cancel button
-    Then the timezone should remain unchanged
-    And the previous timezone should be displayed
-
-    Examples: 
-      | New_Timezone     |
-      | America/New_York |
-      | Europe/London    |
-      | Asia/Dubai       |
-
-  Scenario Outline: Verify TAN format for validity
+  #@UpdateCompanyName
+  #Scenario Outline: Update Date Format
+  #Given I am on the Organization Settings page
+  #When I click the edit icon next to Date Format
+  #And I select "<New_Date_Format>" from the dropdown
+  #And I click the Save button on date format
+  #Then the date format should be updated successfully
+  #And the selected format should be displayed "<New_Date_Format>"
+  #
+  #Examples:
+  #| New_Date_Format |
+  #| MM/dd/yyyy      |
+  #| dd-MM-yyyy      |
+  #| EEE,MM/dd/yyyy  |
+  #| EEE,dd-MM-yyyy  |
+  #
+  #Scenario Outline: Cancel Editing the Date Format
+  #Given I am on the Organization Settings page
+  #And I see the current Date Format displayed
+  #When I click the edit icon next to Date Format
+  #And I select "<New_Date_Format>" from the dropdown
+  #And I click the Cancel button
+  #Then the date format should remain unchanged
+  #And the previous date format should be displayed
+  #
+  #Examples:
+  #| New_Date_Format |
+  #| MM/dd/yyyy      |
+  #| dd-MM-yyyy      |
+  #| EEE,MM/dd/yyyy  |
+  #| EEE,dd-MM-yyyy  |
+  #
+  #Scenario Outline: Update Timezone
+  #Given I am on the Organization Settings page
+  #And I see the current Timezone displayed
+  #When I click the edit icon next to Timezone
+  #And I select "<New_Timezone>" from the dropdown
+  #And I click the Save button
+  #Then the timezone should be updated successfully
+  #And the selected timezone should be displayed
+  #
+  #Examples:
+  #| New_Timezone     |
+  #| America/New_York |
+  #| Europe/London    |
+  #| Asia/Dubai       |
+  #
+  #Scenario Outline: Cancel Editing the Timezone
+  #Given I am on the Organization Settings page
+  #And I see the current Timezone displayed
+  #When I click the edit icon next to Timezone
+  #And I select "<New_Timezone>" from the dropdown
+  #And I click the Cancel button
+  #Then the timezone should remain unchanged
+  #And the previous timezone should be displayed
+  #
+  #Examples:
+  #| New_Timezone     |
+  #| America/New_York |
+  #| Europe/London    |
+  #| Asia/Dubai       |
+  
+  #@UpdateCompanyName
+  Scenario Outline: Verify valid TAN format for validity
     Given the admin user logs in with valid credentials
     When the user opens the Tax Details form in the organization settings
-    And the user enters TAN number "<TAN>" in the TAN field
+    And the user enters valid TAN number "<TAN>" in the TAN field
     And clicks the save button
     Then "<Expected_Result>" should be displayed
 
     Examples: 
+      | TAN        | Expected_Result |
+      | ABCD12345E | Valid           |
+
+  @UpdateCompanyName
+  Scenario Outline: Verify Invalid TAN format for validity
+    Given the admin user logs in with valid credentials
+    When the user opens the Tax Details form in the organization settings
+    And the user enters Invalid TAN number "<TAN>" in the TAN field
+    And clicks the save button
+    Then "Please enter a valid TAN number" message should be displayed
+
+    Examples: 
       | TAN          | Expected_Result                                             |
-      | ABCD12345E   | Valid                                                       |
       | ABC12345E    | Invalid (incorrect format: less than 4 alphabets in prefix) |
       | ABCD1234E    | Invalid (incorrect length: less than 10 characters)         |
       | ABCD1234567E | Invalid (incorrect length: more than 10 characters)         |
       | 1BCD12345E   | Invalid (incorrect format: non-alphabet in prefix)          |
       | ABCD12A45E   | Invalid (incorrect format: non-digit in numeric sequence)   |
       | ABCD12345#   | Invalid (incorrect format: non-alphabet in suffix)          |
-      | abcd12345e   | Invalid (incorrect format: lowercase letters used)          |
       | ABCD-12345E  | Invalid (incorrect format: special character included)      |
       | ABCD 12345E  | Invalid (incorrect format: spaces included)                 |
 

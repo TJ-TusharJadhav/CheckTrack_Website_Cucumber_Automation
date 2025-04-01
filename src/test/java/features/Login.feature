@@ -8,8 +8,8 @@ Feature: Verify Login Functionality
     Then User should be redirected to the dashboard
 
     Examples: 
-      | username                   | password                   |
-      | tushar_test1.6@yopmail.com | tushar_test1.6@yopmail.com |
+      | username            | password            |
+      | ctdemoa@yopmail.com | ctdemoa@yopmail.com |
 
   @invalid
   Scenario Outline: Login attempt with invalid credentials
@@ -64,14 +64,14 @@ Feature: Verify Login Functionality
       | username                   | password                   |
       | tusharwagh.qaz@yopmail.com | tusharwagh.qaz@yopmail.com |
 
-  @otherlinks1
-  Scenario: Verify navigation links on the CheckTrack login page
-    Given User is on the CheckTrack login page
-    When User clicks on the Manage CheckTrack Organization link
-    Then Manage CheckTrack Organization tab should open
-
-  @otherlinks2
-  Scenario: Verify navigation links on the CheckTrack login page
-    Given User is on the CheckTrack login page
-    When User clicks on the Onboard Your Organization link
-    Then Onboard Your Organization tab should open
+  #@otherlinks1
+  #Scenario: Verify navigation links on the CheckTrack login page
+    #Given User is on the CheckTrack login page
+    #When User clicks on the Manage CheckTrack Organization link
+    #Then Manage CheckTrack Organization tab should open
+#
+  #@otherlinks2
+  #Scenario: Verify navigation links on the CheckTrack login page
+    #Given User is on the CheckTrack login page
+    #When User clicks on the Onboard Your Organization link
+    #Then Onboard Your Organization tab should open

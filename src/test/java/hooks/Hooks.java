@@ -14,22 +14,35 @@ import base.BaseClass;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
+import pages.LoginPage;
+import utility.ScreenRecorderUtil;
 
 public class Hooks {
 
     private WebDriver driver;
+    LoginPage login = new LoginPage();
 
     @Before
-    public void setup() {
+    public void setup(Scenario scenario) throws Exception {
         BaseClass.initializeDriver();
         driver = BaseClass.getDriver(); // Get WebDriver instance
+        
+        // Get the scenario name for recording
+        String scenarioName = scenario.getName().replaceAll(" ", "_");
+        ScreenRecorderUtil.startRecord(scenarioName);  // Start recording with scenario name
+
+//        login.Valid_login(); // Perform login
     }
 
-//    @After
-    public void teardown(Scenario scenario) {
+    @After
+    public void teardown(Scenario scenario) throws Exception {
+        Thread.sleep(1000);
+        ScreenRecorderUtil.stopRecord();
+        
         if (scenario.isFailed()) {
             takeScreenshot(scenario);
         }
+        
         BaseClass.closeDriver();
     }
 

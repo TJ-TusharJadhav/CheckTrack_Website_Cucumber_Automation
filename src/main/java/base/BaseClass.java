@@ -1,20 +1,27 @@
 package base;
 
 import java.time.Duration;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import pages.LoginPage;
+
 public class BaseClass {
 	protected static WebDriver driver;
     protected static WebDriverWait wait;
+    public static LoginPage loginPage;
 
     public static void initializeDriver() {
-        if (driver == null) {  // Prevent multiple driver instances
+        if (driver == null) { 
             driver = new ChromeDriver();
             driver.manage().window().maximize();
             wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+            
             driver.get("https://app.checktrack.dev/#/login");
+            
+            loginPage = new LoginPage();
         }
     }
 
@@ -32,5 +39,7 @@ public class BaseClass {
             driver = null;  // Avoid memory leaks
             wait = null;    // Reset WebDriverWait
         }
+        
+       
     }
 }

@@ -1,13 +1,14 @@
 package stepDefinitions;
 
+import base.BaseClass;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import pages.LoginPage;
 
-public class LoginSteps {
-    LoginPage loginPage = new LoginPage();
+public class LoginSteps extends BaseClass{
+//    LoginPage loginPage = new LoginPage();
 
     @Given("User is on the CheckTrack login page")
     public void user_is_on_login_page() {

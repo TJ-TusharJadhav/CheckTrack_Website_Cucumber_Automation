@@ -31,18 +31,35 @@ public class LoginPage extends BaseClass{
     private By ManageCheckTrackOrganisation  = By.xpath("//flt-semantics[@aria-label='Manage CheckTrack Organisation']");
     private By ReegisterYourOrganisation  = By.xpath("//flt-semantics[@aria-label='Register your Organisation']");
     
-    
+    public void Valid_login() throws InterruptedException {
+    	
+        WebElement userField = wait.until(ExpectedConditions.visibilityOfElementLocated(usernameField));
+//        userField.click();Thread.sleep(1000);
+        userField.sendKeys("tushar_test1.6@yopmail.com");
+        Thread.sleep(2000);
+
+        
+        WebElement passField = wait.until(ExpectedConditions.visibilityOfElementLocated(passwordField));
+//        passField.click();
+//        Thread.sleep(1000);
+        passField.sendKeys("Test123");
+        Thread.sleep(1000);
+        
+        WebElement loginBtn = wait.until(ExpectedConditions.elementToBeClickable(loginButton));
+        loginBtn.click();
+    }
 
     public void enterUsername(String username) throws InterruptedException {
         WebElement userField = BaseClass.wait.until(ExpectedConditions.visibilityOfElementLocated(usernameField));
         Thread.sleep(1000);
         userField.sendKeys(username);
+        Thread.sleep(2000);
     }
 
     public void enterPassword(String password) throws InterruptedException {
         WebElement passField = BaseClass.wait.until(ExpectedConditions.visibilityOfElementLocated(passwordField));
-        Thread.sleep(1000);
         passField.sendKeys(password);
+        Thread.sleep(1000);
     }
 
     public void clickLogin() {

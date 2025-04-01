@@ -10,36 +10,40 @@ public class OrganizationSettingSteps {
 	DashboardPage Dashboard = new DashboardPage();
 	LoginPage loginPage = new LoginPage();
 	
-	@Given("I am on the Organization Settings page {string} {string}")
-	public void i_am_on_the_organization_settings_page(String username, String password) throws InterruptedException {
-		loginPage.enterUsername(username);
-        loginPage.enterPassword(password);
-        loginPage.clickLogin();
-		Dashboard.clickmainManu();
-		Dashboard.clickOrganization_settings();
+	@Given("I am on the Organization Settings page")
+	public void i_am_on_the_organization_settings_page() throws InterruptedException {
+		Dashboard.clickmainManu(); Thread.sleep(1000);
+		Dashboard.clickOrganization_settings(); Thread.sleep(1000);
 	    
 	}
 
 	@Given("I see the current Company Name displayed")
 	public void i_see_the_current_company_name_displayed() {
+		
 	    
 	}
 
-//	@When("I click the edit icon next to Company Name")
-//	public void i_click_the_edit_icon_next_to_company_name1() {
-//		OrganizationSetting.click_EditIcon_IN_CompanyName();
-//	   
-//	}
+	@Given("I click the edit icon next to Company Name")
+	public void i_click_the_edit_icon_next_to_company_name1() throws InterruptedException {
+		OrganizationSetting.click_EditIcon_IN_CompanyName();
+	   
+	}
 
 	@When("I enter {string} in the input field")
-	public void i_enter_in_the_input_field(String string) {
+	public void i_enter_in_the_input_field(String string) throws InterruptedException {
 		OrganizationSetting.click_EditTextField_IN_CompanyName(string);
 	    
 	}
 
 	@When("I click the Save button")
-	public void i_click_the_save_button() {
+	public void i_click_the_save_button() throws InterruptedException {
 		OrganizationSetting.click_SaveButton_IN_CompanyName();
+	    
+	}
+	
+	@When("I click the Save button on date format")
+	public void i_click_the_save_button_on_date_format() throws InterruptedException {
+		OrganizationSetting.clickSaveButton();
 	    
 	}
 
@@ -49,52 +53,48 @@ public class OrganizationSettingSteps {
 	}
 
 	@Then("the new company name should be displayed {string}")
-	public void the_new_company_name_should_be_displayed(String string) {
+	public void the_new_company_name_should_be_displayed(String expectedCompanyName) {
+		OrganizationSetting.Verify_new_company_name(expectedCompanyName);
 	    
 	}
 
-	@Given("I click the edit icon next to Company Name")
-	public void i_click_the_edit_icon_next_to_company_name() {
-	    
-	}
+//	@When("I click the edit icon next to Company Name")
+//	public void i_click_the_edit_icon_next_to_company_name() {
+//	    
+//	}
 
 	@When("I clear the company name field")
-	public void i_clear_the_company_name_field() {
+	public void i_clear_the_company_name_field() throws InterruptedException {
+		OrganizationSetting.remove_companyNmae_IN_CompanyName();
 	    
 	}
 
 	@Then("an error message should be displayed Company Name cannot be empty")
 	public void an_error_message_should_be_displayed_company_name_cannot_be_empty() {
+		OrganizationSetting.VerifyErrorMessageInCompanyTestField();
 	    
 	}
 
 	@When("I click the Cancel button")
-	public void i_click_the_cancel_button() {
-	    
-	}
-
-	@Then("the company name should remain unchanged")
-	public void the_company_name_should_remain_unchanged() {
+	public void i_click_the_cancel_button() throws InterruptedException {
+		OrganizationSetting.Click_cancelButtonOncompanyNmae();
 	    
 	}
 
 	@Then("the previous company name should be displayed")
 	public void the_previous_company_name_should_be_displayed() {
+		OrganizationSetting.VerifyPreviousCompanyName();
 	    
 	}
-
-	@Given("I see the current Date Format displayed")
-	public void i_see_the_current_date_format_displayed() {
-	    
-	}
-
 	@When("I click the edit icon next to Date Format")
-	public void i_click_the_edit_icon_next_to_date_format() {
+	public void i_click_the_edit_icon_next_to_date_format() throws InterruptedException {
+		OrganizationSetting.Click_EditBt_On_DateFormat();
 	   
 	}
 
 	@When("I select {string} from the dropdown")
-	public void i_select_from_the_dropdown(String string) {
+	public void i_select_from_the_dropdown(String string) throws InterruptedException {
+		OrganizationSetting.selectDateFormat(string);
 	    
 	}
 
@@ -103,8 +103,9 @@ public class OrganizationSettingSteps {
 	    
 	}
 
-	@Then("the selected format should be displayed")
-	public void the_selected_format_should_be_displayed() {
+	@Then("the selected format should be displayed {string}")
+	public void the_selected_format_should_be_displayed(String string) {
+		OrganizationSetting.verifyDateFormat(string);
 	   
 	}
 
@@ -154,22 +155,44 @@ public class OrganizationSettingSteps {
 	}
 
 	@When("the user opens the Tax Details form in the organization settings")
-	public void the_user_opens_the_tax_details_form_in_the_organization_settings() {
+	public void the_user_opens_the_tax_details_form_in_the_organization_settings() throws InterruptedException {
+		Dashboard.clickmainManu(); Thread.sleep(1000);
+		Dashboard.clickOrganization_settings(); Thread.sleep(1000);
+		OrganizationSetting.Click_TaxDetails_on_organizationSetting();
+		
+		
+		
 	   
 	}
 
-	@When("the user enters TAN number {string} in the TAN field")
-	public void the_user_enters_tan_number_in_the_tan_field(String string) {
+	@When("the user enters valid TAN number {string} in the TAN field")
+	public void the_user_enters_valid_tan_number_in_the_tan_field(String string) throws InterruptedException {
+		OrganizationSetting.Enter_TAN_NO(string);
+	   
+	}
+	
+	@When("the user enters Invalid TAN number {string} in the TAN field")
+	public void the_user_enters_Invalid_tan_number_in_the_tan_field(String string) throws InterruptedException {
+		OrganizationSetting.Enter_TAN_NO(string);
 	   
 	}
 
 	@When("clicks the save button")
-	public void clicks_the_save_button1() {
+	public void clicks_the_save_button1() throws InterruptedException {
+		OrganizationSetting.SaveBT_ON_TaxDetails_on_organizationSetting();
 	    
 	}
 
 	@Then("{string} should be displayed")
 	public void should_be_displayed(String string) {
+		
+	    
+	}
+	
+	@Then("{string} message should be displayed")
+	public void message_should_be_displayed(String string) {
+		OrganizationSetting.Verify_Invalid_TAN_no(string);
+		
 	    
 	}
 
