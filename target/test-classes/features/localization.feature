@@ -1,6 +1,7 @@
 @localization
 Feature: Verify localization functionality
 
+
  @Hindi
   Scenario: Verify language change functionality for Hindi
     Given the user is on the login page

@@ -1,14 +1,13 @@
 package stepDefinitions;
 
-import io.cucumber.java.en.*;
-import pages.DashboardPage;
-import pages.LoginPage;
-import pages.OrganizationSettingPage;
+import org.openqa.selenium.By;
 
-public class OrganizationSettingSteps {
-	OrganizationSettingPage OrganizationSetting = new OrganizationSettingPage();
-	DashboardPage Dashboard = new DashboardPage();
-	LoginPage loginPage = new LoginPage();
+import base.BaseClass;
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
+
+public class OrganizationSettingSteps extends BaseClass{
 	
 	@Given("I am on the Organization Settings page")
 	public void i_am_on_the_organization_settings_page() throws InterruptedException {
@@ -16,13 +15,10 @@ public class OrganizationSettingSteps {
 		Dashboard.clickOrganization_settings(); Thread.sleep(1000);
 	    
 	}
-
 	@Given("I see the current Company Name displayed")
 	public void i_see_the_current_company_name_displayed() {
-		
-	    
+		OrganizationSetting.captureOldCompanyName();
 	}
-
 	@Given("I click the edit icon next to Company Name")
 	public void i_click_the_edit_icon_next_to_company_name1() throws InterruptedException {
 		OrganizationSetting.click_EditIcon_IN_CompanyName();
@@ -35,7 +31,7 @@ public class OrganizationSettingSteps {
 	    
 	}
 
-	@When("I click the Save button")
+	@When("I click the Save button on company name")
 	public void i_click_the_save_button() throws InterruptedException {
 		OrganizationSetting.click_SaveButton_IN_CompanyName();
 	    
@@ -43,12 +39,7 @@ public class OrganizationSettingSteps {
 	
 	@When("I click the Save button on date format")
 	public void i_click_the_save_button_on_date_format() throws InterruptedException {
-		OrganizationSetting.clickSaveButton();
-	    
-	}
-
-	@Then("the company name should be updated successfully")
-	public void the_company_name_should_be_updated_successfully() {
+		OrganizationSetting.clickSaveButtonOnDateformate();
 	    
 	}
 
@@ -58,14 +49,9 @@ public class OrganizationSettingSteps {
 	    
 	}
 
-//	@When("I click the edit icon next to Company Name")
-//	public void i_click_the_edit_icon_next_to_company_name() {
-//	    
-//	}
-
 	@When("I clear the company name field")
 	public void i_clear_the_company_name_field() throws InterruptedException {
-		OrganizationSetting.remove_companyNmae_IN_CompanyName();
+		OrganizationSetting.removeCompanyName();
 	    
 	}
 
@@ -74,16 +60,20 @@ public class OrganizationSettingSteps {
 		OrganizationSetting.VerifyErrorMessageInCompanyTestField();
 	    
 	}
-
-	@When("I click the Cancel button")
-	public void i_click_the_cancel_button() throws InterruptedException {
+	@When("I click the Cancel button on company name")
+	public void i_click_the_cancel_button_on_company_name() throws InterruptedException {
 		OrganizationSetting.Click_cancelButtonOncompanyNmae();
+	}
+
+	@When("I click the Cancel button on date format")
+	public void i_click_the_cancel_button_on_date_format() throws InterruptedException {
+		OrganizationSetting.Click_cancelButtonOndateFormat();
 	    
 	}
 
 	@Then("the previous company name should be displayed")
-	public void the_previous_company_name_should_be_displayed() {
-		OrganizationSetting.VerifyPreviousCompanyName();
+	public void the_previous_company_name_should_be_displayed() throws InterruptedException {
+		OrganizationSetting.verifyCompanyNameNotChanged();
 	    
 	}
 	@When("I click the edit icon next to Date Format")
@@ -97,373 +87,231 @@ public class OrganizationSettingSteps {
 		OrganizationSetting.selectDateFormat(string);
 	    
 	}
-
-	@Then("the date format should be updated successfully")
-	public void the_date_format_should_be_updated_successfully() {
+	@When("I select {string} timezone from the dropdown")
+	public void i_select_from_the_dropdown1(String string) throws InterruptedException {
+		OrganizationSetting.selecttimezone(string);
 	    
 	}
 
-	@Then("the selected format should be displayed {string}")
-	public void the_selected_format_should_be_displayed(String string) {
-		OrganizationSetting.verifyDateFormat(string);
-	   
+	@Then("the selected {string} date format should be displayed.")
+	public void the_selected_date_format_should_be_displayed(String string) {
+		OrganizationSetting.getDateFormat(string);
 	}
-
-	@Then("the date format should remain unchanged")
-	public void the_date_format_should_remain_unchanged() {
-	    
+	
+	@Given("I see the current Date Format displayed")
+	public void i_see_the_current_date_format_displayed() {
+		OrganizationSetting.getOldDateFormat();
 	}
 
 	@Then("the previous date format should be displayed")
 	public void the_previous_date_format_should_be_displayed() {
-	   
-	}
-
-	@Given("I see the current Timezone displayed")
-	public void i_see_the_current_timezone_displayed() {
-	    
-	}
-
-	@When("I click the edit icon next to Timezone")
-	public void i_click_the_edit_icon_next_to_timezone() {
-	    
-	}
-
-	@Then("the timezone should be updated successfully")
-	public void the_timezone_should_be_updated_successfully() {
-	    
-	}
-
-	@Then("the selected timezone should be displayed")
-	public void the_selected_timezone_should_be_displayed() {
-	    
-	}
-
-	@Then("the timezone should remain unchanged")
-	public void the_timezone_should_remain_unchanged() {
-	    
-	}
-
-	@Then("the previous timezone should be displayed")
-	public void the_previous_timezone_should_be_displayed() {
-	    
-	}
-
-	@Given("the admin user logs in with valid credentials")
-	public void the_admin_user_logs_in_with_valid_credentials() {
-	   
-	}
+		OrganizationSetting.verifyOldDateFormat();
+	   }
+	@When("I click the edit icon to select new Timezone")
+	public void i_click_the_edit_icon_next_to_timezone() throws InterruptedException {
+		OrganizationSetting.ChangeTimezoneOnorgnizationSetting();
+		}
 
 	@When("the user opens the Tax Details form in the organization settings")
 	public void the_user_opens_the_tax_details_form_in_the_organization_settings() throws InterruptedException {
 		Dashboard.clickmainManu(); Thread.sleep(1000);
 		Dashboard.clickOrganization_settings(); Thread.sleep(1000);
 		OrganizationSetting.Click_TaxDetails_on_organizationSetting();
-		
-		
-		
-	   
-	}
+		}
 
 	@When("the user enters valid TAN number {string} in the TAN field")
 	public void the_user_enters_valid_tan_number_in_the_tan_field(String string) throws InterruptedException {
 		OrganizationSetting.Enter_TAN_NO(string);
-	   
-	}
+	   }
 	
 	@When("the user enters Invalid TAN number {string} in the TAN field")
 	public void the_user_enters_Invalid_tan_number_in_the_tan_field(String string) throws InterruptedException {
 		OrganizationSetting.Enter_TAN_NO(string);
-	   
-	}
+	   }
 
-	@When("clicks the save button")
+	@When("clicks the save button in tax details page")
 	public void clicks_the_save_button1() throws InterruptedException {
 		OrganizationSetting.SaveBT_ON_TaxDetails_on_organizationSetting();
-	    
-	}
+	   }
 
-	@Then("{string} should be displayed")
-	public void should_be_displayed(String string) {
-		
-	    
+	@Then("Please enter a valid TAN number message should be displayed")
+	public void please_enter_a_valid_tan_number_message_should_be_displayed() throws InterruptedException {
+		OrganizationSetting.TANErrorMessage();
+	}
+	@Then("Please enter a valid PAN number message should be displayed")
+	public void please_enter_a_valid_pan_number_message_should_be_displayed() throws InterruptedException {
+		OrganizationSetting.PANErrorMessage();
+	}
+	@Then("Please enter a valid GSTIN number message should be displayed")
+	public void please_enter_a_valid_GSTIN_number_message_should_be_displayed() throws InterruptedException {
+		OrganizationSetting.GSTINErrorMessage();
 	}
 	
 	@Then("{string} message should be displayed")
 	public void message_should_be_displayed(String string) {
 		OrganizationSetting.Verify_Invalid_TAN_no(string);
-		
-	    
-	}
+		}
 
 	@When("the user enters {string} in the PAN field")
-	public void the_user_enters_in_the_pan_field(String string) {
-	   
-	}
-
-	@Then("the system should {string}")
-	public void the_system_should(String string) {
-	    
-	}
+	public void the_user_enters_in_the_pan_field(String string) throws InterruptedException {
+		OrganizationSetting.Enter_PAN_NO(string);
+	   }
 
 	@When("the user enters {string} in the GSTIN field")
-	public void the_user_enters_in_the_gstin_field(String string) {
-	    
+	public void the_user_enters_in_the_gstin_field(String string) throws InterruptedException {
+		OrganizationSetting.Enter_GSTIN_NO(string);
+	    }
+
+	@Then("New GSTIN number should be saved {string}")
+	public void new_gstin_number_should_be_saved(String string) {
+	}
+	
+	@Given("registered business address is not save in Tax Details form")
+	public void registered_business_address_is_not_save_in_tax_details_form() throws InterruptedException {
+		OrganizationSetting.registered_business_address_filed();
 	}
 
-	@When("the click save button")
-	public void the_click_save_button() {
-	    
+	@Then("Please select Registered Business address error message should be dispalyed")
+	public void please_select_registered_business_address_error_message_should_be_dispalyed() throws InterruptedException {
+		OrganizationSetting.registered_business_address_filed_Error_message();
 	}
-
-	@Then("{string}")
-	public void string(String string) {
-	    
-	}
-
-	@When("Click the address field")
-	public void click_the_address_field() {
-	    
-	}
-
-	@Then("Campnay address list should be displayed")
-	public void campnay_address_list_should_be_displayed() {
-	    
-	}
-
-	@Then("Selected address should be displayed")
-	public void selected_address_should_be_displayed() {
-	    
-	}
-
-	@Given("registered business address is not save")
-	public void registered_business_address_is_not_save() {
-	    
-	}
-
-	@When("click the save button")
-	public void click_the_save_button() {
-	    
-	}
-
-	@Then("Empty field should not accept")
-	public void empty_field_should_not_accept() {
-	    
-	}
-
-	@Then("Error should be shown in registered business address field")
-	public void error_should_be_shown_in_registered_business_address_field() {
-	   
-	}
-
-	@When("Fill the form and click the save button")
-	public void fill_the_form_and_click_the_save_button() {
-	    
-	}
-
-	@Then("Enterd Data should be save")
-	public void enterd_data_should_be_save() {
-	    
-	}
-
-	@Given("the registered business address has been saved,")
-	public void the_registered_business_address_has_been_saved() {
-	    
-	}
-
-	@Given("a payroll process has been approved,")
-	public void a_payroll_process_has_been_approved() {
-	    
-	}
-
-	@Given("the user logs in with valid credentials,")
-	public void the_user_logs_in_with_valid_credentials() {
-	   
-	}
-
-	@When("the user downloads the payslip,")
-	public void the_user_downloads_the_payslip() {
-	    
-	}
-
-	@Then("the selected registered business address should be shown on the payslip.")
-	public void the_selected_registered_business_address_should_be_shown_on_the_payslip() {
-	    
-	}
-
-	@Given("the user is on the Reimbursement Configuration page")
-	public void the_user_is_on_the_reimbursement_configuration_page() {
-	    
-	}
-
-	@When("the user selects a cut-off date from the dropdown")
-	public void the_user_selects_a_cut_off_date_from_the_dropdown() {
-	   
-	}
-
-	@When("clicks the Save button")
-	public void clicks_the_save_button() {
-	    
-	}
-
-	@Then("the selected cut-off date should be saved and applied for the reimbursement cycle")
-	public void the_selected_cut_off_date_should_be_saved_and_applied_for_the_reimbursement_cycle() {
-	    
-	}
-
-	@Given("the admin\\/HR has set the cut-off date in the Reimbursement configuration")
-	public void the_admin_hr_has_set_the_cut_off_date_in_the_reimbursement_configuration() {
-	    
-	}
-
-	@When("the user submits their request during the current cycle")
-	public void the_user_submits_their_request_during_the_current_cycle() {
-	    
-	}
-
-	@Then("Submitted reimbursement request will be processed in the current cycle success message should be displayed")
-	public void submitted_reimbursement_request_will_be_processed_in_the_current_cycle_success_message_should_be_displayed() {
-	    
-	}
-
-	@When("the user submits their request during the upcoming cycle")
-	public void the_user_submits_their_request_during_the_upcoming_cycle() {
-	    
-	}
-
-	@Then("Submitted reimbursement request will be processed in the coming cycle success message should be displayed")
-	public void submitted_reimbursement_request_will_be_processed_in_the_coming_cycle_success_message_should_be_displayed() {
-	    
-	}
-
+	
 	@Given("I click the Add Work Location button")
-	public void i_click_the_add_work_location_button() {
+	public void i_click_the_add_work_location_button() throws InterruptedException {
+		OrganizationSetting.Click_Add_Work_Location_Btn_on_organizationSetting();
+	}
+	@When("I fill Add Work Location form {string} {string} {string} {string} {string}")
+	public void i_fill_and_save_the_add_work_location_form_with_and(String Address, String City, String State, String Country, String Pincode) throws InterruptedException {
+		OrganizationSetting.Enter_Address(Address);
+		OrganizationSetting.Select_County(Country);
+		OrganizationSetting.Select_State(State);
+		OrganizationSetting.Select_City(City);
+		OrganizationSetting.Enter_pincode(Pincode);
+		OrganizationSetting.Click_SaveBtn_on_organizationSetting();
+		
+	}
+	
+	@Then("the new work location should be added to the list {string} {string} {string} {string} {string}")
+	public void the_new_work_location_should_be_added_to_the_list_with_and(String Address, String City, String State, String Country, String Pincode) throws InterruptedException {
+		OrganizationSetting.Verify_new_address(Address, City, State, Country, Pincode);
+	}
+	
+	@When("I click the edit icon on work location list {string} {string} {string} {string} {string}")
+	public void i_click_the_edit_icon_on_work_location_list(String string, String string2, String string3, String string4, String string5) throws InterruptedException {
+		OrganizationSetting.ClickingEditAddressIcon(string, string2, string3, string4, string5);
+	}
+	@When("I edit the Work Location {string} {string} {string} {string} {string}")
+	public void i_edit_the_work_location(String Address, String City, String State, String Country, String Pincode) throws InterruptedException {
+		OrganizationSetting.Enter_Address_Edit(Address);
+		OrganizationSetting.update_Countyinworklocation(Country);
+		OrganizationSetting.update_Stateinworklocation(State);
+		OrganizationSetting.update_Cityinworklocation(City);
+		OrganizationSetting.update_pincode(Pincode);
+		OrganizationSetting.Click_SaveBtn_on_organizationSetting();
 	    
 	}
-
-	@When("I enter {string} in the Address field")
-	public void i_enter_in_the_address_field(String string) {
-	    
+	@Then("the work location should be updated successfully {string} {string} {string} {string} {string}")
+	public void the_work_location_should_be_updated_successfully(String Address, String City, String State, String Country, String Pincode) throws InterruptedException {
+		OrganizationSetting.Verify_new_address(Address, City, State, Country, Pincode);
 	}
-
-	@When("I select {string} from the Country dropdown")
-	public void i_select_from_the_country_dropdown(String string) {
-	    
+	
+	@When("I fill Add Work Location form and click cancel button {string} {string} {string} {string} {string}")
+	public void i_fill_and_save_the_add_work_location(String Address, String City, String State, String Country, String Pincode) throws InterruptedException {
+		OrganizationSetting.Enter_Address(Address);
+		OrganizationSetting.Select_County(Country);
+		OrganizationSetting.Select_State(State);
+		OrganizationSetting.Select_City(City);
+		OrganizationSetting.Enter_pincode(Pincode);
+		OrganizationSetting.CancelBT_ON_workLocation();
+		
 	}
-
-	@When("I select {string} from the State dropdown")
-	public void i_select_from_the_state_dropdown(String string) {
-	   
+	@Then("New work location should not be save in the Work Locations list {string} {string} {string} {string} {string}")
+	public void new_work_location_should_not_be_save_in_the_work_locations_list(String Address, String City, String State, String Country, String Pincode) throws InterruptedException {
+		OrganizationSetting.Verify_new_address_is_not_saved(Address, City, State, Country, Pincode);
 	}
-
-	@When("I select {string} from the City dropdown")
-	public void i_select_from_the_city_dropdown(String string) {
-	   
+	
+	@When("I click the delete icon on work location list {string} {string} {string} {string} {string}")
+	public void i_click_the_delete_icon_on_work_location_list(String string, String string2, String string3, String string4, String string5) throws InterruptedException {
+		OrganizationSetting.ClickingDeleteAddressIcon(string, string2, string3, string4, string5);
 	}
-
-	@When("I enter {string} in the Pincode field")
-	public void i_enter_in_the_pincode_field(String string) {
-	    
-	}
-
-	@Then("the new work location should be added successfully")
-	public void the_new_work_location_should_be_added_successfully() {
-	    
-	}
-
-	@Then("I should see {string} {string} {string} {string} {string} in the Work Locations list")
-	public void i_should_see_in_the_work_locations_list(String string, String string2, String string3, String string4, String string5) {
-	   
-	}
-
-	@Given("I see the Work Locations section")
-	public void i_see_the_work_locations_section() {
-	    
-	}
-
-	@Given("there is an existing work location {string}")
-	public void there_is_an_existing_work_location(String string) {
-	    
-	}
-
-	@When("I click the edit icon next to the work location")
-	public void i_click_the_edit_icon_next_to_the_work_location() {
-	    
-	}
-
-	@When("I update the Address field with {string}")
-	public void i_update_the_address_field_with(String string) {
-	    
-	}
-
-	@When("I update the Country to {string}")
-	public void i_update_the_country_to(String string) {
-	    
-	}
-
-	@When("I update the State to {string}")
-	public void i_update_the_state_to(String string) {
-	   
-	}
-
-	@When("I update the City to {string}")
-	public void i_update_the_city_to(String string) {
-	    
-	}
-
-	@When("I update the Pincode to {string}")
-	public void i_update_the_pincode_to(String string) {
-	   
-	}
-
-	@Then("the work location should be updated successfully")
-	public void the_work_location_should_be_updated_successfully() {
-	    
-	}
-
-	@Then("the work location should not be added")
-	public void the_work_location_should_not_be_added() {
-	    
-	}
-
-	@Then("I should not see {string} {string} {string} {string} {string}  in the Work Locations list")
-	public void i_should_not_see_in_the_work_locations_list(String string, String string2, String string3, String string4, String string5) {
-	    
-	}
-
-	@Given("there is an existing work location {string} {string} {string} {string} {string}")
-	public void there_is_an_existing_work_location(String string, String string2, String string3, String string4, String string5) {
-	    
-	}
-
-	@When("I click the delete icon next to the work location")
-	public void i_click_the_delete_icon_next_to_the_work_location() {
-	    
-	}
-
 	@When("I confirm the deletion in the confirmation dialog")
-	public void i_confirm_the_deletion_in_the_confirmation_dialog() {
+	public void i_confirm_the_deletion_in_the_confirmation_dialog() throws InterruptedException {
+		OrganizationSetting.Click_yesBtn_on_deleteworklocation();
 	    
 	}
-
-	@Then("the work location should be removed from the Work Locations list")
-	public void the_work_location_should_be_removed_from_the_work_locations_list() {
+	@Then("the work location should be removed from the Work Locations list {string} {string} {string} {string} {string}")
+	public void the_work_location_should_be_removed_from_the_work_locations_list(String Address, String City, String State, String Country, String Pincode) throws InterruptedException {
+		OrganizationSetting.Verify_Selected_address_is_delete(Address, City, State, Country, Pincode);
 	    
 	}
-
-	@Then("I should not see {string} {string} {string} {string} {string}  in the list")
-	public void i_should_not_see_in_the_list(String string, String string2, String string3, String string4, String string5) {
-	    
-	}
-
 	@When("I cancel the deletion in the confirmation dialog")
-	public void i_cancel_the_deletion_in_the_confirmation_dialog() {
+	public void i_cancel_the_deletion_in_the_confirmation_dialog() throws InterruptedException {
+		OrganizationSetting.Click_NOBtn_on_deleteworklocation();
 	   
 	}
-
-	@Then("the work location should still be present in the {string} {string} {string} {string} {string}  list")
-	public void the_work_location_should_still_be_present_in_the_list(String string, String string2, String string3, String string4, String string5) {
+	@Then("the work location should still be present in work location list {string} {string} {string} {string} {string}")
+	public void the_work_location_should_still_be_present_in_work_location_list(String Address, String City, String State, String Country, String Pincode) throws InterruptedException {
+		OrganizationSetting.Verify_new_address(Address, City, State, Country, Pincode);
 	    
 	}
+	
+	@Then("Please Enter a valid TAN number error message should not displayed")
+	public void please_enter_a_valid_tan_number_error_message_should_not_displayed() throws InterruptedException {
+		OrganizationSetting.dONOT_DISPLAYED_ERROR_INVALID_MESSAGE_IN_TAN_FIELD();
+	}
+	
+	@Then("Please Enter a valid PAN number error message should not displayed")
+	public void please_enter_a_valid_pan_number_error_message_should_not_displayed() throws InterruptedException {
+		OrganizationSetting.dONOT_DISPLAYED_ERROR_INVALID_MESSAGE_IN_PAN_FIELD();
+	}
+	@Then("Please Enter a valid GSTIN number error message should not displayed")
+	public void please_enter_a_valid_gstin_number_error_message_should_not_displayed() throws InterruptedException {
+		OrganizationSetting.dONOT_DISPLAYED_ERROR_INVALID_MESSAGE_IN_GSTIN_FIELD();
+	}
+	
+	@When("the user selects Tax Payer Type from the options {string}")
+	public void the_user_selects_tax_payer_type_from_the_options(String string) throws InterruptedException {
+		OrganizationSetting.Select_TaxType(string);
+	}
+	@Then("Tax Payer Type should be displayed in the Tax payer type field {string}")
+	public void tax_payer_type_should_be_displayed_in_the_tax_payer_type_field(String string) throws InterruptedException {
+		OrganizationSetting.varity_selected_taxType(string);
+	}
+	
+	@Then("Please select Registered Business address error message should be displayed")
+	public void please_select_registered_business_address_error_message_should_be_displayed() throws InterruptedException {
+		OrganizationSetting.verify_Error_message_For_Registered_Business_address();
+	    
+	}
+	@When("the user clicks on the Registered Business Address dropdown field in tax details")
+	public void the_user_clicks_on_the_registered_business_address_dropdown_field_in_tax_details() throws InterruptedException {
+		OrganizationSetting.click_Tax_Details_inOrganization_details();
+	}
+	@When("selects a company address from the dropdown options {string} {string} {string} {string} {string}")
+	public void selects_a_company_address_from_the_dropdown_options(String string, String string2, String string3, String string4, String string5) throws InterruptedException {
+		OrganizationSetting.SelectRegisteredAddress(string, string2, string3, string4, string5);
+	}
+	@Then("the selected company address should be displayed in the Registered Business Address field {string} {string} {string} {string} {string}")
+	public void the_selected_company_address_should_be_displayed_in_the_registered_business_address_field(String string, String string2, String string3, String string4, String string5) throws InterruptedException {
+		OrganizationSetting.VerifySelectRegisteredAddress(string, string2, string3, string4, string5);
+	}
+	
+	@When("the user fill the Tax Details form {string} {string} {string} {string} {string} {string} {string} {string} {string}")
+	public void the_user_fill_the_tax_details_form(String TaxTypes, String TAN, String PAN, String GST, String Address, String City, String State, String Country, String Pincode) throws InterruptedException {
+		OrganizationSetting.selectTaxTypeData(TaxTypes);
+		OrganizationSetting.entertannumberdata(TAN);
+		OrganizationSetting.enterpannumberdata(PAN);
+		OrganizationSetting.enterGSTnumberdata(GST);
+		OrganizationSetting.selectaddressData(Address, City, State, Country, Pincode);
+		OrganizationSetting.Click_SaveBtn_on_organizationSetting();
+	    
+	}
+	@Then("Enterd Tax Details should be save {string} {string} {string} {string} {string} {string} {string} {string} {string}")
+	public void enterd_tax_details_should_be_save(String TaxTypes, String TAN, String PAN, String GST, String Address, String City, String State, String Country, String Pincode) throws InterruptedException {
+		OrganizationSetting.enterd_tax_details_should_be_save(TaxTypes,TAN, PAN,GST, Address, City, State, Country, Pincode);
+	}
+	
+	
+	
 
 }

@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>0/1/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>69/3/0</td>
 </tr><tr>
-<td>Started on:</td><td>Wed Mar 26 13:35:46 IST 2025</td>
+<td>Started on:</td><td>Fri May 09 11:15:25 IST 2025</td>
 </tr>
-<tr><td>Total time:</td><td>44 seconds (44767 ms)</td>
+<tr><td>Total time:</td><td>3257 seconds (3257957 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -76,33 +76,497 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='runners.TestNG_runer.runScenario()'><b>runScenario</b><br>Test class: runners.TestNG_runer<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Successful login with valid credentials", "Verify Login Functionality"</td>
-<td><div><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //input[@aria-label=&apos;Email&apos;] (tried for 30 second(s) with 500 milliseconds interval)
-Build info: version: &apos;4.29.0&apos;, revision: &apos;5fc1ec94cb&apos;
+<td title='runners.OrganizationSettingRunner.runScenario()'><b>runScenario</b><br>Test class: runners.OrganizationSettingRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate Invalid input in PAN field", "Verify Organization Setting Functionality"</td>
+<td><div><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.xpath: //flt-semantics[@aria-label=&apos;Open navigation menu&apos;] (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: &apos;4.28.1&apos;, revision: &apos;73f5ad48a2&apos;
 System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.10&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 134.0.6998.165, chrome: {chromedriverVersion: 134.0.6998.165 (fd886e2cb29..., userDataDir: C:\Users\tusha\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:54116}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:54116/devtoo..., se:cdpVersion: 134.0.6998.165, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: ce2baaf091b8196d83bd048f392cab7b
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 135.0.7049.117, chrome: {chromedriverVersion: 135.0.7049.114 (63fd8a7d9d0..., userDataDir: C:\Users\tusha\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:49396}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:49396/devtoo..., se:cdpVersion: 135.0.7049.117, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 0debd398a7a6d7f44856ed6ef2436e34
 	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
 	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
-	at pages.LoginPage.enterUsername(LoginPage.java:53)
-	at stepDefinitions.LoginSteps.user_enters_credentials(LoginSteps.java:18)
-	at ✽.User enters &quot;tushar_test1.6@yopmail.com&quot; and &quot;tushar_test1.6@yopmail.com&quot;(file:///E:/workplace/CheckTrack_Website_cucumber/src/test/java/features/Login.feature:6)
-</pre></div><a href='#' onClick='toggleBox("stack-trace1444642131", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1444642131'><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //input[@aria-label=&apos;Email&apos;] (tried for 30 second(s) with 500 milliseconds interval)
-Build info: version: &apos;4.29.0&apos;, revision: &apos;5fc1ec94cb&apos;
+	at pages.DashboardPage.clickmainManu(DashboardPage.java:20)
+	at stepDefinitions.OrganizationSettingSteps.the_user_opens_the_tax_details_form_in_the_organization_settings(OrganizationSettingSteps.java:117)
+	at ✽.the user opens the Tax Details form in the organization settings(file:///E:/workplace/CheckTrack_Website_Cucumber_Automation/src/test/java/features/OrganizationSetting.feature:232)
+</pre></div><a href='#' onClick='toggleBox("stack-trace1675218265", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1675218265'><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.xpath: //flt-semantics[@aria-label=&apos;Open navigation menu&apos;] (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: &apos;4.28.1&apos;, revision: &apos;73f5ad48a2&apos;
 System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.10&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 134.0.6998.165, chrome: {chromedriverVersion: 134.0.6998.165 (fd886e2cb29..., userDataDir: C:\Users\tusha\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:54116}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:54116/devtoo..., se:cdpVersion: 134.0.6998.165, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: ce2baaf091b8196d83bd048f392cab7b
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 135.0.7049.117, chrome: {chromedriverVersion: 135.0.7049.114 (63fd8a7d9d0..., userDataDir: C:\Users\tusha\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:49396}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:49396/devtoo..., se:cdpVersion: 135.0.7049.117, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 0debd398a7a6d7f44856ed6ef2436e34
 	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
 	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
-	at pages.LoginPage.enterUsername(LoginPage.java:53)
-	at stepDefinitions.LoginSteps.user_enters_credentials(LoginSteps.java:18)
-	at ✽.User enters &quot;tushar_test1.6@yopmail.com&quot; and &quot;tushar_test1.6@yopmail.com&quot;(file:///E:/workplace/CheckTrack_Website_cucumber/src/test/java/features/Login.feature:6)
+	at pages.DashboardPage.clickmainManu(DashboardPage.java:20)
+	at stepDefinitions.OrganizationSettingSteps.the_user_opens_the_tax_details_form_in_the_organization_settings(OrganizationSettingSteps.java:117)
+	at ✽.the user opens the Tax Details form in the organization settings(file:///E:/workplace/CheckTrack_Website_Cucumber_Automation/src/test/java/features/OrganizationSetting.feature:232)
 </pre></div></td>
-<td>44</td>
-<td>runners.TestNG_runer@1a677343</td></tr>
+<td>31</td>
+<td>runners.OrganizationSettingRunner@6f03482</td></tr>
+<tr>
+<td title='runners.OrganizationSettingRunner.runScenario()'><b>runScenario</b><br>Test class: runners.OrganizationSettingRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Cancel deletion of a work location", "Verify Organization Setting Functionality"</td>
+<td><div><pre>org.openqa.selenium.StaleElementReferenceException: stale element reference: stale element not found in the current frame
+  (Session info: chrome=135.0.7049.117)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#stale-element-reference-exception
+Build info: version: &apos;4.28.1&apos;, revision: &apos;73f5ad48a2&apos;
+System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.10&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [0e05229645949fa42a273fb93996ea75, getElementDomAttribute {id=f.8E1226EE3B0BF2329810D600DB777DE0.d.D39570D76F7567C0879AB8931504252D.e.124, name=aria-label}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 135.0.7049.117, chrome: {chromedriverVersion: 135.0.7049.114 (63fd8a7d9d0..., userDataDir: C:\Users\tusha\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:64478}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:64478/devtoo..., se:cdpVersion: 135.0.7049.117, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (0e05229645949fa42a273fb93996ea75)] -&gt; xpath: (//flt-semantics[@role=&apos;text&apos;])[2]]
+Session ID: 0e05229645949fa42a273fb93996ea75
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
+	at org.openqa.selenium.remote.RemoteWebElement.getDomAttribute(RemoteWebElement.java:144)
+	at pages.OrganizationSettingPage.ClickingDeleteAddressIcon(OrganizationSettingPage.java:477)
+	at stepDefinitions.OrganizationSettingSteps.i_click_the_delete_icon_on_work_location_list(OrganizationSettingSteps.java:235)
+	at ✽.I click the delete icon on work location list &quot;456 MG Road&quot; &quot;Bengaluru&quot; &quot;Karnataka&quot; &quot;India&quot; &quot;560001&quot;(file:///E:/workplace/CheckTrack_Website_Cucumber_Automation/src/test/java/features/OrganizationSetting.feature:168)
+... Removed 5 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1550156131", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1550156131'><pre>org.openqa.selenium.StaleElementReferenceException: stale element reference: stale element not found in the current frame
+  (Session info: chrome=135.0.7049.117)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#stale-element-reference-exception
+Build info: version: &apos;4.28.1&apos;, revision: &apos;73f5ad48a2&apos;
+System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.10&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [0e05229645949fa42a273fb93996ea75, getElementDomAttribute {id=f.8E1226EE3B0BF2329810D600DB777DE0.d.D39570D76F7567C0879AB8931504252D.e.124, name=aria-label}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 135.0.7049.117, chrome: {chromedriverVersion: 135.0.7049.114 (63fd8a7d9d0..., userDataDir: C:\Users\tusha\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:64478}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:64478/devtoo..., se:cdpVersion: 135.0.7049.117, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (0e05229645949fa42a273fb93996ea75)] -&gt; xpath: (//flt-semantics[@role=&apos;text&apos;])[2]]
+Session ID: 0e05229645949fa42a273fb93996ea75
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
+	at org.openqa.selenium.remote.RemoteWebElement.getDomAttribute(RemoteWebElement.java:144)
+	at pages.OrganizationSettingPage.ClickingDeleteAddressIcon(OrganizationSettingPage.java:477)
+	at stepDefinitions.OrganizationSettingSteps.i_click_the_delete_icon_on_work_location_list(OrganizationSettingSteps.java:235)
+	at ✽.I click the delete icon on work location list &quot;456 MG Road&quot; &quot;Bengaluru&quot; &quot;Karnataka&quot; &quot;India&quot; &quot;560001&quot;(file:///E:/workplace/CheckTrack_Website_Cucumber_Automation/src/test/java/features/OrganizationSetting.feature:168)
+</pre></div></td>
+<td>55</td>
+<td>runners.OrganizationSettingRunner@6f03482</td></tr>
+<tr>
+<td title='runners.OrganizationSettingRunner.runScenario()'><b>runScenario</b><br>Test class: runners.OrganizationSettingRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Delete an existing work location", "Verify Organization Setting Functionality"</td>
+<td><div><pre>org.openqa.selenium.StaleElementReferenceException: stale element reference: stale element not found in the current frame
+  (Session info: chrome=135.0.7049.117)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#stale-element-reference-exception
+Build info: version: &apos;4.28.1&apos;, revision: &apos;73f5ad48a2&apos;
+System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.10&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [a64c87ec58f285e8f117653f16fa8543, getElementDomAttribute {id=f.FC0F87AD51F95A231C883DD62ACAA91E.d.55A731C769279DFADD41172D74A35FB5.e.124, name=aria-label}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 135.0.7049.117, chrome: {chromedriverVersion: 135.0.7049.114 (63fd8a7d9d0..., userDataDir: C:\Users\tusha\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:64173}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:64173/devtoo..., se:cdpVersion: 135.0.7049.117, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (a64c87ec58f285e8f117653f16fa8543)] -&gt; xpath: (//flt-semantics[@role=&apos;text&apos;])[2]]
+Session ID: a64c87ec58f285e8f117653f16fa8543
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
+	at org.openqa.selenium.remote.RemoteWebElement.getDomAttribute(RemoteWebElement.java:144)
+	at pages.OrganizationSettingPage.ClickingDeleteAddressIcon(OrganizationSettingPage.java:477)
+	at stepDefinitions.OrganizationSettingSteps.i_click_the_delete_icon_on_work_location_list(OrganizationSettingSteps.java:235)
+	at ✽.I click the delete icon on work location list &quot;1259 Tech Street,add&quot; &quot;San Jose&quot; &quot;California&quot; &quot;United States&quot; &quot;95112&quot;(file:///E:/workplace/CheckTrack_Website_Cucumber_Automation/src/test/java/features/OrganizationSetting.feature:153)
+... Removed 5 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace761948295", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace761948295'><pre>org.openqa.selenium.StaleElementReferenceException: stale element reference: stale element not found in the current frame
+  (Session info: chrome=135.0.7049.117)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#stale-element-reference-exception
+Build info: version: &apos;4.28.1&apos;, revision: &apos;73f5ad48a2&apos;
+System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.10&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [a64c87ec58f285e8f117653f16fa8543, getElementDomAttribute {id=f.FC0F87AD51F95A231C883DD62ACAA91E.d.55A731C769279DFADD41172D74A35FB5.e.124, name=aria-label}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 135.0.7049.117, chrome: {chromedriverVersion: 135.0.7049.114 (63fd8a7d9d0..., userDataDir: C:\Users\tusha\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:64173}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:64173/devtoo..., se:cdpVersion: 135.0.7049.117, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (a64c87ec58f285e8f117653f16fa8543)] -&gt; xpath: (//flt-semantics[@role=&apos;text&apos;])[2]]
+Session ID: a64c87ec58f285e8f117653f16fa8543
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
+	at org.openqa.selenium.remote.RemoteWebElement.getDomAttribute(RemoteWebElement.java:144)
+	at pages.OrganizationSettingPage.ClickingDeleteAddressIcon(OrganizationSettingPage.java:477)
+	at stepDefinitions.OrganizationSettingSteps.i_click_the_delete_icon_on_work_location_list(OrganizationSettingSteps.java:235)
+	at ✽.I click the delete icon on work location list &quot;1259 Tech Street,add&quot; &quot;San Jose&quot; &quot;California&quot; &quot;United States&quot; &quot;95112&quot;(file:///E:/workplace/CheckTrack_Website_Cucumber_Automation/src/test/java/features/OrganizationSetting.feature:153)
+</pre></div></td>
+<td>55</td>
+<td>runners.OrganizationSettingRunner@6f03482</td></tr>
+</table><p>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td><b>Attribute(s)</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='runners.OrganizationSettingRunner.runScenario()'><b>runScenario</b><br>Test class: runners.OrganizationSettingRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Add a new work location", "Verify Organization Setting Functionality"</td>
+<td></td>
+<td>56</td>
+<td>runners.OrganizationSettingRunner@6f03482</td></tr>
+<tr>
+<td title='runners.OrganizationSettingRunner.runScenario()'><b>runScenario</b><br>Test class: runners.OrganizationSettingRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Cancel adding a new work location", "Verify Organization Setting Functionality"</td>
+<td></td>
+<td>56</td>
+<td>runners.OrganizationSettingRunner@6f03482</td></tr>
+<tr>
+<td title='runners.OrganizationSettingRunner.runScenario()'><b>runScenario</b><br>Test class: runners.OrganizationSettingRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Cancel deletion of a work location", "Verify Organization Setting Functionality"</td>
+<td></td>
+<td>58</td>
+<td>runners.OrganizationSettingRunner@6f03482</td></tr>
+<tr>
+<td title='runners.OrganizationSettingRunner.runScenario()'><b>runScenario</b><br>Test class: runners.OrganizationSettingRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Cancel deletion of a work location", "Verify Organization Setting Functionality"</td>
+<td></td>
+<td>58</td>
+<td>runners.OrganizationSettingRunner@6f03482</td></tr>
+<tr>
+<td title='runners.OrganizationSettingRunner.runScenario()'><b>runScenario</b><br>Test class: runners.OrganizationSettingRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify Invalid TAN format for validity", "Verify Organization Setting Functionality"</td>
+<td></td>
+<td>27</td>
+<td>runners.OrganizationSettingRunner@6f03482</td></tr>
+<tr>
+<td title='runners.OrganizationSettingRunner.runScenario()'><b>runScenario</b><br>Test class: runners.OrganizationSettingRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Prevent saving an empty Company Name", "Verify Organization Setting Functionality"</td>
+<td></td>
+<td>29</td>
+<td>runners.OrganizationSettingRunner@6f03482</td></tr>
+<tr>
+<td title='runners.OrganizationSettingRunner.runScenario()'><b>runScenario</b><br>Test class: runners.OrganizationSettingRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify Invalid TAN format for validity", "Verify Organization Setting Functionality"</td>
+<td></td>
+<td>30</td>
+<td>runners.OrganizationSettingRunner@6f03482</td></tr>
+<tr>
+<td title='runners.OrganizationSettingRunner.runScenario()'><b>runScenario</b><br>Test class: runners.OrganizationSettingRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Add a new work location", "Verify Organization Setting Functionality"</td>
+<td></td>
+<td>55</td>
+<td>runners.OrganizationSettingRunner@6f03482</td></tr>
+<tr>
+<td title='runners.OrganizationSettingRunner.runScenario()'><b>runScenario</b><br>Test class: runners.OrganizationSettingRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Add a new work location", "Verify Organization Setting Functionality"</td>
+<td></td>
+<td>56</td>
+<td>runners.OrganizationSettingRunner@6f03482</td></tr>
+<tr>
+<td title='runners.OrganizationSettingRunner.runScenario()'><b>runScenario</b><br>Test class: runners.OrganizationSettingRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Cancel Editing the Date Format", "Verify Organization Setting Functionality"</td>
+<td></td>
+<td>31</td>
+<td>runners.OrganizationSettingRunner@6f03482</td></tr>
+<tr>
+<td title='runners.OrganizationSettingRunner.runScenario()'><b>runScenario</b><br>Test class: runners.OrganizationSettingRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate Invalid input in PAN field", "Verify Organization Setting Functionality"</td>
+<td></td>
+<td>28</td>
+<td>runners.OrganizationSettingRunner@6f03482</td></tr>
+<tr>
+<td title='runners.OrganizationSettingRunner.runScenario()'><b>runScenario</b><br>Test class: runners.OrganizationSettingRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate Invalid input in PAN field", "Verify Organization Setting Functionality"</td>
+<td></td>
+<td>27</td>
+<td>runners.OrganizationSettingRunner@6f03482</td></tr>
+<tr>
+<td title='runners.OrganizationSettingRunner.runScenario()'><b>runScenario</b><br>Test class: runners.OrganizationSettingRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate Invalid input in PAN field", "Verify Organization Setting Functionality"</td>
+<td></td>
+<td>28</td>
+<td>runners.OrganizationSettingRunner@6f03482</td></tr>
+<tr>
+<td title='runners.OrganizationSettingRunner.runScenario()'><b>runScenario</b><br>Test class: runners.OrganizationSettingRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify Invalid TAN format for validity", "Verify Organization Setting Functionality"</td>
+<td></td>
+<td>27</td>
+<td>runners.OrganizationSettingRunner@6f03482</td></tr>
+<tr>
+<td title='runners.OrganizationSettingRunner.runScenario()'><b>runScenario</b><br>Test class: runners.OrganizationSettingRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Cancel Editing the Date Format", "Verify Organization Setting Functionality"</td>
+<td></td>
+<td>31</td>
+<td>runners.OrganizationSettingRunner@6f03482</td></tr>
+<tr>
+<td title='runners.OrganizationSettingRunner.runScenario()'><b>runScenario</b><br>Test class: runners.OrganizationSettingRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate Invalid input in PAN field", "Verify Organization Setting Functionality"</td>
+<td></td>
+<td>28</td>
+<td>runners.OrganizationSettingRunner@6f03482</td></tr>
+<tr>
+<td title='runners.OrganizationSettingRunner.runScenario()'><b>runScenario</b><br>Test class: runners.OrganizationSettingRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate valid input in PAN field", "Verify Organization Setting Functionality"</td>
+<td></td>
+<td>38</td>
+<td>runners.OrganizationSettingRunner@6f03482</td></tr>
+<tr>
+<td title='runners.OrganizationSettingRunner.runScenario()'><b>runScenario</b><br>Test class: runners.OrganizationSettingRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify whether the entered tax details are saved successfully or not.", "Verify Organization Setting Functionality"</td>
+<td></td>
+<td>178</td>
+<td>runners.OrganizationSettingRunner@6f03482</td></tr>
+<tr>
+<td title='runners.OrganizationSettingRunner.runScenario()'><b>runScenario</b><br>Test class: runners.OrganizationSettingRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "User selects a tax payer type from the Tax details dropdown", "Verify Organization Setting Functionality"</td>
+<td></td>
+<td>28</td>
+<td>runners.OrganizationSettingRunner@6f03482</td></tr>
+<tr>
+<td title='runners.OrganizationSettingRunner.runScenario()'><b>runScenario</b><br>Test class: runners.OrganizationSettingRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify valid TAN format for validity", "Verify Organization Setting Functionality"</td>
+<td></td>
+<td>38</td>
+<td>runners.OrganizationSettingRunner@6f03482</td></tr>
+<tr>
+<td title='runners.OrganizationSettingRunner.runScenario()'><b>runScenario</b><br>Test class: runners.OrganizationSettingRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate Invalid input in PAN field", "Verify Organization Setting Functionality"</td>
+<td></td>
+<td>27</td>
+<td>runners.OrganizationSettingRunner@6f03482</td></tr>
+<tr>
+<td title='runners.FailedTestRunner.runScenario()'><b>runScenario</b><br>Test class: runners.FailedTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Add and Edit Work Location Successfully", "Verify Organization Setting Functionality"</td>
+<td></td>
+<td>94</td>
+<td>runners.FailedTestRunner@7eac9008</td></tr>
+<tr>
+<td title='runners.OrganizationSettingRunner.runScenario()'><b>runScenario</b><br>Test class: runners.OrganizationSettingRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Empty Registered Business address filed should not accept", "Verify Organization Setting Functionality"</td>
+<td></td>
+<td>26</td>
+<td>runners.OrganizationSettingRunner@6f03482</td></tr>
+<tr>
+<td title='runners.OrganizationSettingRunner.runScenario()'><b>runScenario</b><br>Test class: runners.OrganizationSettingRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate valid input in GSTIN field", "Verify Organization Setting Functionality"</td>
+<td></td>
+<td>40</td>
+<td>runners.OrganizationSettingRunner@6f03482</td></tr>
+<tr>
+<td title='runners.OrganizationSettingRunner.runScenario()'><b>runScenario</b><br>Test class: runners.OrganizationSettingRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Update Date Format", "Verify Organization Setting Functionality"</td>
+<td></td>
+<td>30</td>
+<td>runners.OrganizationSettingRunner@6f03482</td></tr>
+<tr>
+<td title='runners.OrganizationSettingRunner.runScenario()'><b>runScenario</b><br>Test class: runners.OrganizationSettingRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Update Company Name", "Verify Organization Setting Functionality"</td>
+<td></td>
+<td>28</td>
+<td>runners.OrganizationSettingRunner@6f03482</td></tr>
+<tr>
+<td title='runners.OrganizationSettingRunner.runScenario()'><b>runScenario</b><br>Test class: runners.OrganizationSettingRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Cancel adding a new work location", "Verify Organization Setting Functionality"</td>
+<td></td>
+<td>56</td>
+<td>runners.OrganizationSettingRunner@6f03482</td></tr>
+<tr>
+<td title='runners.OrganizationSettingRunner.runScenario()'><b>runScenario</b><br>Test class: runners.OrganizationSettingRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify Invalid TAN format for validity", "Verify Organization Setting Functionality"</td>
+<td></td>
+<td>31</td>
+<td>runners.OrganizationSettingRunner@6f03482</td></tr>
+<tr>
+<td title='runners.OrganizationSettingRunner.runScenario()'><b>runScenario</b><br>Test class: runners.OrganizationSettingRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate invalid input in GSTIN field", "Verify Organization Setting Functionality"</td>
+<td></td>
+<td>28</td>
+<td>runners.OrganizationSettingRunner@6f03482</td></tr>
+<tr>
+<td title='runners.OrganizationSettingRunner.runScenario()'><b>runScenario</b><br>Test class: runners.OrganizationSettingRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify Invalid TAN format for validity", "Verify Organization Setting Functionality"</td>
+<td></td>
+<td>28</td>
+<td>runners.OrganizationSettingRunner@6f03482</td></tr>
+<tr>
+<td title='runners.OrganizationSettingRunner.runScenario()'><b>runScenario</b><br>Test class: runners.OrganizationSettingRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Update Company Name", "Verify Organization Setting Functionality"</td>
+<td></td>
+<td>27</td>
+<td>runners.OrganizationSettingRunner@6f03482</td></tr>
+<tr>
+<td title='runners.OrganizationSettingRunner.runScenario()'><b>runScenario</b><br>Test class: runners.OrganizationSettingRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate Invalid input in PAN field", "Verify Organization Setting Functionality"</td>
+<td></td>
+<td>28</td>
+<td>runners.OrganizationSettingRunner@6f03482</td></tr>
+<tr>
+<td title='runners.OrganizationSettingRunner.runScenario()'><b>runScenario</b><br>Test class: runners.OrganizationSettingRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate invalid input in GSTIN field", "Verify Organization Setting Functionality"</td>
+<td></td>
+<td>28</td>
+<td>runners.OrganizationSettingRunner@6f03482</td></tr>
+<tr>
+<td title='runners.OrganizationSettingRunner.runScenario()'><b>runScenario</b><br>Test class: runners.OrganizationSettingRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify whether the entered tax details are saved successfully or not.", "Verify Organization Setting Functionality"</td>
+<td></td>
+<td>148</td>
+<td>runners.OrganizationSettingRunner@6f03482</td></tr>
+<tr>
+<td title='runners.OrganizationSettingRunner.runScenario()'><b>runScenario</b><br>Test class: runners.OrganizationSettingRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Update Company Name", "Verify Organization Setting Functionality"</td>
+<td></td>
+<td>28</td>
+<td>runners.OrganizationSettingRunner@6f03482</td></tr>
+<tr>
+<td title='runners.OrganizationSettingRunner.runScenario()'><b>runScenario</b><br>Test class: runners.OrganizationSettingRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Add and Edit Work Location Successfully", "Verify Organization Setting Functionality"</td>
+<td></td>
+<td>94</td>
+<td>runners.OrganizationSettingRunner@6f03482</td></tr>
+<tr>
+<td title='runners.OrganizationSettingRunner.runScenario()'><b>runScenario</b><br>Test class: runners.OrganizationSettingRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Update Date Format", "Verify Organization Setting Functionality"</td>
+<td></td>
+<td>30</td>
+<td>runners.OrganizationSettingRunner@6f03482</td></tr>
+<tr>
+<td title='runners.OrganizationSettingRunner.runScenario()'><b>runScenario</b><br>Test class: runners.OrganizationSettingRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Cancel Editing the Company Name", "Verify Organization Setting Functionality"</td>
+<td></td>
+<td>31</td>
+<td>runners.OrganizationSettingRunner@6f03482</td></tr>
+<tr>
+<td title='runners.OrganizationSettingRunner.runScenario()'><b>runScenario</b><br>Test class: runners.OrganizationSettingRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify whether the entered tax details are saved successfully or not.", "Verify Organization Setting Functionality"</td>
+<td></td>
+<td>107</td>
+<td>runners.OrganizationSettingRunner@6f03482</td></tr>
+<tr>
+<td title='runners.OrganizationSettingRunner.runScenario()'><b>runScenario</b><br>Test class: runners.OrganizationSettingRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Update Company Name", "Verify Organization Setting Functionality"</td>
+<td></td>
+<td>27</td>
+<td>runners.OrganizationSettingRunner@6f03482</td></tr>
+<tr>
+<td title='runners.OrganizationSettingRunner.runScenario()'><b>runScenario</b><br>Test class: runners.OrganizationSettingRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "User selects a tax payer type from the Tax details dropdown", "Verify Organization Setting Functionality"</td>
+<td></td>
+<td>27</td>
+<td>runners.OrganizationSettingRunner@6f03482</td></tr>
+<tr>
+<td title='runners.OrganizationSettingRunner.runScenario()'><b>runScenario</b><br>Test class: runners.OrganizationSettingRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate valid input in GSTIN field", "Verify Organization Setting Functionality"</td>
+<td></td>
+<td>38</td>
+<td>runners.OrganizationSettingRunner@6f03482</td></tr>
+<tr>
+<td title='runners.OrganizationSettingRunner.runScenario()'><b>runScenario</b><br>Test class: runners.OrganizationSettingRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate Invalid input in PAN field", "Verify Organization Setting Functionality"</td>
+<td></td>
+<td>28</td>
+<td>runners.OrganizationSettingRunner@6f03482</td></tr>
+<tr>
+<td title='runners.OrganizationSettingRunner.runScenario()'><b>runScenario</b><br>Test class: runners.OrganizationSettingRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Display of selected company address in Registered Business Address field", "Verify Organization Setting Functionality"</td>
+<td></td>
+<td>61</td>
+<td>runners.OrganizationSettingRunner@6f03482</td></tr>
+<tr>
+<td title='runners.OrganizationSettingRunner.runScenario()'><b>runScenario</b><br>Test class: runners.OrganizationSettingRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify Invalid TAN format for validity", "Verify Organization Setting Functionality"</td>
+<td></td>
+<td>28</td>
+<td>runners.OrganizationSettingRunner@6f03482</td></tr>
+<tr>
+<td title='runners.OrganizationSettingRunner.runScenario()'><b>runScenario</b><br>Test class: runners.OrganizationSettingRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate invalid input in GSTIN field", "Verify Organization Setting Functionality"</td>
+<td></td>
+<td>28</td>
+<td>runners.OrganizationSettingRunner@6f03482</td></tr>
+<tr>
+<td title='runners.OrganizationSettingRunner.runScenario()'><b>runScenario</b><br>Test class: runners.OrganizationSettingRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Update Company Name", "Verify Organization Setting Functionality"</td>
+<td></td>
+<td>28</td>
+<td>runners.OrganizationSettingRunner@6f03482</td></tr>
+<tr>
+<td title='runners.OrganizationSettingRunner.runScenario()'><b>runScenario</b><br>Test class: runners.OrganizationSettingRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Delete an existing work location", "Verify Organization Setting Functionality"</td>
+<td></td>
+<td>67</td>
+<td>runners.OrganizationSettingRunner@6f03482</td></tr>
+<tr>
+<td title='runners.OrganizationSettingRunner.runScenario()'><b>runScenario</b><br>Test class: runners.OrganizationSettingRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Cancel adding a new work location", "Verify Organization Setting Functionality"</td>
+<td></td>
+<td>56</td>
+<td>runners.OrganizationSettingRunner@6f03482</td></tr>
+<tr>
+<td title='runners.OrganizationSettingRunner.runScenario()'><b>runScenario</b><br>Test class: runners.OrganizationSettingRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Delete an existing work location", "Verify Organization Setting Functionality"</td>
+<td></td>
+<td>68</td>
+<td>runners.OrganizationSettingRunner@6f03482</td></tr>
+<tr>
+<td title='runners.OrganizationSettingRunner.runScenario()'><b>runScenario</b><br>Test class: runners.OrganizationSettingRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Cancel Editing the Date Format", "Verify Organization Setting Functionality"</td>
+<td></td>
+<td>31</td>
+<td>runners.OrganizationSettingRunner@6f03482</td></tr>
+<tr>
+<td title='runners.OrganizationSettingRunner.runScenario()'><b>runScenario</b><br>Test class: runners.OrganizationSettingRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "User selects a tax payer type from the Tax details dropdown", "Verify Organization Setting Functionality"</td>
+<td></td>
+<td>28</td>
+<td>runners.OrganizationSettingRunner@6f03482</td></tr>
+<tr>
+<td title='runners.OrganizationSettingRunner.runScenario()'><b>runScenario</b><br>Test class: runners.OrganizationSettingRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Add a new work location", "Verify Organization Setting Functionality"</td>
+<td></td>
+<td>56</td>
+<td>runners.OrganizationSettingRunner@6f03482</td></tr>
+<tr>
+<td title='runners.OrganizationSettingRunner.runScenario()'><b>runScenario</b><br>Test class: runners.OrganizationSettingRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Cancel Editing the Date Format", "Verify Organization Setting Functionality"</td>
+<td></td>
+<td>30</td>
+<td>runners.OrganizationSettingRunner@6f03482</td></tr>
+<tr>
+<td title='runners.OrganizationSettingRunner.runScenario()'><b>runScenario</b><br>Test class: runners.OrganizationSettingRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "User selects a tax payer type from the Tax details dropdown", "Verify Organization Setting Functionality"</td>
+<td></td>
+<td>28</td>
+<td>runners.OrganizationSettingRunner@6f03482</td></tr>
+<tr>
+<td title='runners.OrganizationSettingRunner.runScenario()'><b>runScenario</b><br>Test class: runners.OrganizationSettingRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify Invalid TAN format for validity", "Verify Organization Setting Functionality"</td>
+<td></td>
+<td>28</td>
+<td>runners.OrganizationSettingRunner@6f03482</td></tr>
+<tr>
+<td title='runners.OrganizationSettingRunner.runScenario()'><b>runScenario</b><br>Test class: runners.OrganizationSettingRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Update Company Name", "Verify Organization Setting Functionality"</td>
+<td></td>
+<td>27</td>
+<td>runners.OrganizationSettingRunner@6f03482</td></tr>
+<tr>
+<td title='runners.OrganizationSettingRunner.runScenario()'><b>runScenario</b><br>Test class: runners.OrganizationSettingRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Update Date Format", "Verify Organization Setting Functionality"</td>
+<td></td>
+<td>30</td>
+<td>runners.OrganizationSettingRunner@6f03482</td></tr>
+<tr>
+<td title='runners.OrganizationSettingRunner.runScenario()'><b>runScenario</b><br>Test class: runners.OrganizationSettingRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate invalid input in GSTIN field", "Verify Organization Setting Functionality"</td>
+<td></td>
+<td>28</td>
+<td>runners.OrganizationSettingRunner@6f03482</td></tr>
+<tr>
+<td title='runners.OrganizationSettingRunner.runScenario()'><b>runScenario</b><br>Test class: runners.OrganizationSettingRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate Invalid input in PAN field", "Verify Organization Setting Functionality"</td>
+<td></td>
+<td>28</td>
+<td>runners.OrganizationSettingRunner@6f03482</td></tr>
+<tr>
+<td title='runners.OrganizationSettingRunner.runScenario()'><b>runScenario</b><br>Test class: runners.OrganizationSettingRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate Invalid input in PAN field", "Verify Organization Setting Functionality"</td>
+<td></td>
+<td>28</td>
+<td>runners.OrganizationSettingRunner@6f03482</td></tr>
+<tr>
+<td title='runners.OrganizationSettingRunner.runScenario()'><b>runScenario</b><br>Test class: runners.OrganizationSettingRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify whether the entered tax details are saved successfully or not.", "Verify Organization Setting Functionality"</td>
+<td></td>
+<td>146</td>
+<td>runners.OrganizationSettingRunner@6f03482</td></tr>
+<tr>
+<td title='runners.OrganizationSettingRunner.runScenario()'><b>runScenario</b><br>Test class: runners.OrganizationSettingRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate Invalid input in PAN field", "Verify Organization Setting Functionality"</td>
+<td></td>
+<td>28</td>
+<td>runners.OrganizationSettingRunner@6f03482</td></tr>
+<tr>
+<td title='runners.OrganizationSettingRunner.runScenario()'><b>runScenario</b><br>Test class: runners.OrganizationSettingRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Update Company Name", "Verify Organization Setting Functionality"</td>
+<td></td>
+<td>26</td>
+<td>runners.OrganizationSettingRunner@6f03482</td></tr>
+<tr>
+<td title='runners.OrganizationSettingRunner.runScenario()'><b>runScenario</b><br>Test class: runners.OrganizationSettingRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify whether the entered tax details are saved successfully or not.", "Verify Organization Setting Functionality"</td>
+<td></td>
+<td>128</td>
+<td>runners.OrganizationSettingRunner@6f03482</td></tr>
+<tr>
+<td title='runners.OrganizationSettingRunner.runScenario()'><b>runScenario</b><br>Test class: runners.OrganizationSettingRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "User selects a tax payer type from the Tax details dropdown", "Verify Organization Setting Functionality"</td>
+<td></td>
+<td>28</td>
+<td>runners.OrganizationSettingRunner@6f03482</td></tr>
+<tr>
+<td title='runners.OrganizationSettingRunner.runScenario()'><b>runScenario</b><br>Test class: runners.OrganizationSettingRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Update Date Format", "Verify Organization Setting Functionality"</td>
+<td></td>
+<td>30</td>
+<td>runners.OrganizationSettingRunner@6f03482</td></tr>
+<tr>
+<td title='runners.OrganizationSettingRunner.runScenario()'><b>runScenario</b><br>Test class: runners.OrganizationSettingRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate invalid input in GSTIN field", "Verify Organization Setting Functionality"</td>
+<td></td>
+<td>28</td>
+<td>runners.OrganizationSettingRunner@6f03482</td></tr>
+<tr>
+<td title='runners.OrganizationSettingRunner.runScenario()'><b>runScenario</b><br>Test class: runners.OrganizationSettingRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Add a new work location", "Verify Organization Setting Functionality"</td>
+<td></td>
+<td>56</td>
+<td>runners.OrganizationSettingRunner@6f03482</td></tr>
 </table><p>
 </body>
 </html>

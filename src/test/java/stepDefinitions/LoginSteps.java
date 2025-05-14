@@ -8,7 +8,10 @@ import io.cucumber.java.en.When;
 import pages.LoginPage;
 
 public class LoginSteps extends BaseClass{
-//    LoginPage loginPage = new LoginPage();
+	@Given("the user is logged in")
+	public void the_user_is_logged_in() throws InterruptedException {
+		loginPage.Valid_login();
+	}
 
     @Given("User is on the CheckTrack login page")
     public void user_is_on_login_page() {

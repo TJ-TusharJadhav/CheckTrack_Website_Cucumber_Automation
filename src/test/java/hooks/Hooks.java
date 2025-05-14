@@ -8,30 +8,27 @@ import java.util.Date;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
-import org.openqa.selenium.WebDriver;
 
 import base.BaseClass;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
-import pages.LoginPage;
 import utility.ScreenRecorderUtil;
 
-public class Hooks {
-
-    private WebDriver driver;
-    LoginPage login = new LoginPage();
+public class Hooks extends BaseClass{
 
     @Before
     public void setup(Scenario scenario) throws Exception {
-        BaseClass.initializeDriver();
-        driver = BaseClass.getDriver(); // Get WebDriver instance
+        initializeDriver();
         
-        // Get the scenario name for recording
+     // Get the scenario name for recording
         String scenarioName = scenario.getName().replaceAll(" ", "_");
-        ScreenRecorderUtil.startRecord(scenarioName);  // Start recording with scenario name
-
-//        login.Valid_login(); // Perform login
+        ScreenRecorderUtil.startRecord(scenarioName); 
+        
+//        loginPage.Valid_login();
+        driver = getDriver(); // Get WebDriver instance
+        
+       
     }
 
     @After
@@ -41,11 +38,29 @@ public class Hooks {
         
         if (scenario.isFailed()) {
             takeScreenshot(scenario);
+        } else {
+            // Delete the recording if the scenario passed
+            deleteLastRecordedVideo();
         }
-        
+
         BaseClass.closeDriver();
     }
 
+    private void deleteLastRecordedVideo() {
+        try {
+            String lastVideoPath = ScreenRecorderUtil.getLastRecordedFilePath();
+            if (lastVideoPath != null) {
+                File videoFile = new File(lastVideoPath);
+                if (videoFile.exists()) {
+                    videoFile.delete();
+                    System.out.println("Deleted video file for passed test case: " + lastVideoPath);
+                }
+            }
+        } catch (Exception e) {
+            System.out.println("Failed to delete video file: " + e.getMessage());
+        }
+        
+    }
     public void takeScreenshot(Scenario scenario) {
         try {
             // Generate a timestamp for unique filenames
@@ -70,5 +85,5 @@ public class Hooks {
         } catch (IOException e) {
             System.out.println("Failed to capture screenshot: " + e.getMessage());
         }
-    }
-}
+    
+}}

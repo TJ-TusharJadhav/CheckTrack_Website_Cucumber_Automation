@@ -62,16 +62,16 @@ Feature: Verify Login Functionality
 
     Examples: 
       | username                   | password                   |
-      | tusharwagh.qaz@yopmail.com | tusharwagh.qaz@yopmail.com |
+      | terminatedEmp@yopmail.com | abc123 |
 
-  #@otherlinks1
-  #Scenario: Verify navigation links on the CheckTrack login page
-    #Given User is on the CheckTrack login page
-    #When User clicks on the Manage CheckTrack Organization link
-    #Then Manage CheckTrack Organization tab should open
-#
-  #@otherlinks2
-  #Scenario: Verify navigation links on the CheckTrack login page
-    #Given User is on the CheckTrack login page
-    #When User clicks on the Onboard Your Organization link
-    #Then Onboard Your Organization tab should open
+  @links1
+  Scenario: Navigate to Manage CheckTrack Organization tab form login page
+    Given User is on the CheckTrack login page
+    When User clicks on the Manage CheckTrack Organization link
+    Then Manage CheckTrack Organization tab should open
+
+  @links2
+  Scenario: Navigate to Onboard Your Organization tab form login page 
+    Given User is on the CheckTrack login page
+    When User clicks on the Onboard Your Organization link
+    Then Onboard Your Organization tab should open

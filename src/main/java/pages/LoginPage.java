@@ -22,31 +22,32 @@ public class LoginPage extends BaseClass{
     private By Dashboard  = By.xpath("//flt-semantics[@aria-label='Projects']");
     private By Bad_credentials = By.xpath("//flt-semantics[@aria-label='Bad credentials!']");
     private By Empty_UsernameFiled_error = By.xpath("//flt-semantics[@aria-label='Please enter a valid email ID']");
-    private By Empty_passwordFiled_error = By.xpath("//*[@id=\"flt-semantic-node-16\"]");
+    private By Empty_passwordFiled_error = By.xpath("//flt-semantics[@aria-label=\"Password can't be blank\"]");
     private By Access_denied_error = By.xpath("//flt-semantics[@aria-label='Access denied!']");
     
     private By both_Empty_UsernameFiled_error = By.xpath("//flt-semantics[@aria-label='Please enter a valid email ID']");
-    private By both_Empty_passwordFiled_error = By.xpath("//*[@id=\"flt-semantic-node-17\"]");
+    private By both_Empty_passwordFiled_error = By.xpath("//flt-semantics[@aria-label=\"Password can't be blank\"]");
     
     private By ManageCheckTrackOrganisation  = By.xpath("//flt-semantics[@aria-label='Manage CheckTrack Organisation']");
     private By ReegisterYourOrganisation  = By.xpath("//flt-semantics[@aria-label='Register your Organisation']");
+    public String admin_Login = "asfdgzq345df@yopmail.com";
     
     public void Valid_login() throws InterruptedException {
     	
         WebElement userField = wait.until(ExpectedConditions.visibilityOfElementLocated(usernameField));
-//        userField.click();Thread.sleep(1000);
-        userField.sendKeys("tushar_test1.6@yopmail.com");
-        Thread.sleep(2000);
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        Thread.sleep(3000);
+        userField.sendKeys(admin_Login);
+        Thread.sleep(3000);
 
         
         WebElement passField = wait.until(ExpectedConditions.visibilityOfElementLocated(passwordField));
-//        passField.click();
-//        Thread.sleep(1000);
-        passField.sendKeys("Test123");
-        Thread.sleep(1000);
+        passField.sendKeys(admin_Login);
+        Thread.sleep(2000);
         
         WebElement loginBtn = wait.until(ExpectedConditions.elementToBeClickable(loginButton));
         loginBtn.click();
+        Thread.sleep(3000);
     }
 
     public void enterUsername(String username) throws InterruptedException {

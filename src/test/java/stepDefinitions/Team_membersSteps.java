@@ -1,8 +1,7 @@
 package stepDefinitions;
 
-import pages.Team_membersPage;
+import base.BaseClass;
 
-public class Team_membersSteps {
-	Team_membersPage team = new Team_membersPage();
-
+public class Team_membersSteps extends BaseClass{
+	
 }

@@ -1,0 +1,28 @@
+Use This xpath for Edit and delete expected work location
+(//flt-semantics[@aria-label='Mumbai, Maharashtra, India, Fayzabad, Badakhshan, Afghanistan, 123456']/flt-semantics-container/flt-semantics)[1]
+
+Use This xpath for Edit expected work schedule
+(//flt-semantics[@aria-label='Work Schedule 2h30m']/flt-semantics-container/flt-semantics)[2]
+
+Use this xpath for selecting working, non working and payrate in indivival expected day
+for selecting monday and working and non working day > ((//flt-semantics[@role='group'])[1]/flt-semantics-container/flt-semantics)[1]
+for selecting monday and pay rate > ((//flt-semantics[@role='group'])[1]/flt-semantics-container/flt-semantics)[2]
+
+for selecting Tuesday and working and non working day > ((//flt-semantics[@role='group'])[2]/flt-semantics-container/flt-semantics)[1]
+for selecting Tuesday and pay rate > ((//flt-semantics[@role='group'])[2]/flt-semantics-container/flt-semantics)[2]
+
+Use This xpath for Edit and delete expected project and task
+(//flt-semantics[@aria-label='HRMS System']/flt-semantics-container/flt-semantics)[2]
+
+Use This xpath for Edit Employee profile
+(//flt-semantics[@aria-label='Profile']/flt-semantics-container/flt-semantics)[2]
+
+Use This xpath for Edit and delete expected Reimbursement request
+(//flt-semantics[@aria-label='draft\n"
+	        		+ "D\n"
+	        		+ "Expense date:\n"
+	        		+ "04/01/2025\n"
+	        		+ "Amount:\n"
+	        		+ "₹500.00']/flt-semantics-container/flt-semantics)[2]
+Use This xpath for Edit expected leave type        		
+//flt-semantics[@aria-label='Paid Leave']/flt-semantics-container/flt-semantics[@tabindex='0']
