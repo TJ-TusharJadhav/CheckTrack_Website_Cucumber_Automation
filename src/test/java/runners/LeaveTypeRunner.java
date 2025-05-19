@@ -7,7 +7,7 @@ import io.cucumber.testng.CucumberOptions;
         features = "src/test/java/features/LeaveTypes.feature",
         glue = {"stepDefinitions", "hooks"},
         plugin = {"pretty", "html:target/LeaveTypes_reports.html"}
-//       ,tags = "@Valid"
+       ,tags = "@ashygdf"
 		)
 public class LeaveTypeRunner extends AbstractTestNGCucumberTests{
 

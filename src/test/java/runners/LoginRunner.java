@@ -7,7 +7,7 @@ import io.cucumber.testng.CucumberOptions;
         features = "src/test/java/features/Login.feature",
         glue = {"stepDefinitions", "hooks"},
         plugin = {"pretty", "html:target/Login-reports.html"}
-//       ,tags = "@otherlinks2"
+      ,tags = "@otherlinks2"
 		)
 
 public class LoginRunner extends AbstractTestNGCucumberTests{

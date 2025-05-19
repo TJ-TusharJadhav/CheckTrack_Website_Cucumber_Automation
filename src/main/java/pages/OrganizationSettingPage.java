@@ -44,8 +44,8 @@ public class OrganizationSettingPage extends BaseClass{
 	//	Timezone
 	private By editiconOntimezone=By.xpath("(//flt-semantics[@role='button'])[4]");
 	private By clicktimezonedropdown= By.xpath("(//flt-semantics[@role='button'])[4]");
-	private By SaveButton_IN_Timezone  = By.xpath("(//flt-semantics[@role='button'])[3]");
-	private By CancelBtTimezone = By.xpath("(//flt-semantics[@role='button'])[2]");
+	private By SaveButton_IN_Timezone  = By.xpath("(//flt-semantics[@role='button'])[6]");
+	private By CancelBtTimezone = By.xpath("(//flt-semantics[@role='button'])[5]");
 	
 //	registered business address
 	private By registered_business_address=By.xpath("//flt-semantics[@aria-label='Registered Business address']");
@@ -71,6 +71,7 @@ public class OrganizationSettingPage extends BaseClass{
 	
 	String oldDateFormat;
 	 String oldCompanyName;
+	 String oldtimezone;
 	
 	
 	public void Verify_Invalid_TAN_no(String expectedCompanyName) {
@@ -758,6 +759,44 @@ public class OrganizationSettingPage extends BaseClass{
         Assert.assertEquals(addressElement.getDomAttribute("aria-label"), expectedAddress);
 
         System.out.println("All entered Tax Details are successfully validated.");
+    }
+    
+    public void Change_timezone(String timezone) throws InterruptedException {
+//    	WebElement edittimezone = BaseClass.wait.until(ExpectedConditions.visibilityOfElementLocated(editiconOntimezone));
+//    	edittimezone.click();Thread.sleep(1000);
+    	
+//    	WebElement opendropdown = BaseClass.wait.until(ExpectedConditions.visibilityOfElementLocated(clicktimezonedropdown));
+//    	opendropdown.click();Thread.sleep(1000);
+    	
+    	driver.findElement(By.xpath("//flt-semantics[@aria-label='"+timezone+"']")).click();
+    }
+    
+    public void click_save_button_on_timezone() throws InterruptedException {
+    	WebElement save = BaseClass.wait.until(ExpectedConditions.visibilityOfElementLocated(SaveButton_IN_Timezone));
+    	save.click();
+    	Thread.sleep(1000);
+    	}
+    public void click_cancell_button_on_timezone() throws InterruptedException {
+    	WebElement cancell = BaseClass.wait.until(ExpectedConditions.visibilityOfElementLocated(CancelBtTimezone));
+    	cancell.click();
+    	Thread.sleep(1000);
+    	}
+    public void verify_selected_timezone(String expected_timezone) throws InterruptedException {
+    	String actual_timezone= driver.findElement(By.xpath("(//flt-semantics[@role='text'])[7]")).getDomAttribute("aria-label");
+    	Assert.assertEquals(actual_timezone, expected_timezone);
+    }
+    public void verify_selected_timezoneon_addTeamMembre_form(String expected_timezone) throws InterruptedException {
+    	String actual_timezone= driver.findElement(By.xpath("(//flt-semantics[@role='text'])[7]")).getDomAttribute("aria-label");
+    	Assert.assertEquals(actual_timezone, expected_timezone);
+    }
+    public void getcurrenttimezone() {
+    	oldtimezone= driver.findElement(By.xpath("(//flt-semantics[@role='text'])[7]")).getDomAttribute("aria-label");
+    	System.out.println("Old timezone: "+oldtimezone);
+    }
+    public void verfiyoldtimezone() {
+    	String actual_timezone= driver.findElement(By.xpath("(//flt-semantics[@role='text'])[7]")).getDomAttribute("aria-label");
+    	System.out.println("actual_timezone: "+actual_timezone);
+    	Assert.assertEquals(oldtimezone, actual_timezone);
     }
     
 

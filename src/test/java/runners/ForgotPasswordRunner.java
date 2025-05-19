@@ -7,7 +7,7 @@ import io.cucumber.testng.CucumberOptions;
         features = "src/test/java/features/Forgot_password.feature",
         glue = {"stepDefinitions", "hooks"},
         plugin = {"pretty", "html:target/Forgot_Password-reports.html"}
-//       ,tags = "@tag1"
+       ,tags = "@sdfgset"
 		)
 
 public class ForgotPasswordRunner extends AbstractTestNGCucumberTests{

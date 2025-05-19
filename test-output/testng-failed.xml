@@ -5,8 +5,8 @@
     <classes>
       <class name="stepDefinitions.learing">
         <methods>
+          <include name="checkbox"/>
           <include name="after"/>
-          <include name="color"/>
           <include name="before"/>
         </methods>
       </class> <!-- stepDefinitions.learing -->

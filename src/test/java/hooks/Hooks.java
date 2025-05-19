@@ -25,7 +25,6 @@ public class Hooks extends BaseClass{
         String scenarioName = scenario.getName().replaceAll(" ", "_");
         ScreenRecorderUtil.startRecord(scenarioName); 
         
-//        loginPage.Valid_login();
         driver = getDriver(); // Get WebDriver instance
         
        

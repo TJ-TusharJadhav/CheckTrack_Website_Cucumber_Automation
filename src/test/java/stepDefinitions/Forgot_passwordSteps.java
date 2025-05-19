@@ -61,5 +61,32 @@ public class Forgot_passwordSteps extends BaseClass{
 	public void the_user_should_be_able_to_log_in_successfully_with_the_newly_set_password_password(String string) throws InterruptedException {
 		forgot.loginWithNewPassword(string);
 	}
+	@When("the user leaves the Password field empty")
+	public void the_user_leaves_the_password_field_empty() {
+	}
+	@When("enters {string} in the Confirm Password field")
+	public void enters_in_the_confirm_password_field(String string) {
+		forgot.enter_Conform_password(string);
+	}
+	@When("clicks the Set Password button")
+	public void clicks_the_set_password_button() throws InterruptedException {
+		forgot.click_set_password();
+		
+	}
+	@Then("the system should display a message Password must be entered")
+	public void the_system_should_display_a_message_password_must_be_entered() {
+		forgot.verifyEmptyPasswordfield();
+	}
+	@When("the user enters {string} in the Password field")
+	public void the_user_enters_in_the_password_field(String string) {
+		forgot.enter_password(string);
+	}
+	@When("leaves the Confirm Password field empty")
+	public void leaves_the_confirm_password_field_empty() {
+	}
+	@Then("the system should display a message Confirm Password must be entered")
+	public void the_system_should_display_a_message_confirm_password_must_be_entered() {
+		forgot.verifyEmptyConfirmPasswordfield();
+	}
 
 }

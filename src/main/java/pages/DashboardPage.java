@@ -13,11 +13,16 @@ private By Organization_settings  = By.xpath("//flt-semantics[@aria-label='Organ
 private By reimbursement  = By.xpath("//flt-semantics[@aria-label='Reimbursement']");
 private By projects  = By.xpath("//flt-semantics[@aria-label='Projects']");
 private By timesheet  = By.xpath("//flt-semantics[@aria-label='My timesheet']");
+private By TeamMembers  = By.xpath("//flt-semantics[@aria-label='Team members']");
 
 private By leave_management  = By.xpath("//flt-semantics[@aria-label='Leave management']");
 	
 	public void clickmainManu() {
         WebElement mainManu1 = BaseClass.wait.until(ExpectedConditions.elementToBeClickable(mainManu));
+        mainManu1.click();
+    }
+	public void clickTeamMember() {
+        WebElement mainManu1 = BaseClass.wait.until(ExpectedConditions.elementToBeClickable(TeamMembers));
         mainManu1.click();
     }
 	

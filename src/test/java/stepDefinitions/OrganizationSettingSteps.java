@@ -1,7 +1,5 @@
 package stepDefinitions;
 
-import org.openqa.selenium.By;
-
 import base.BaseClass;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -309,6 +307,39 @@ public class OrganizationSettingSteps extends BaseClass{
 	@Then("Enterd Tax Details should be save {string} {string} {string} {string} {string} {string} {string} {string} {string}")
 	public void enterd_tax_details_should_be_save(String TaxTypes, String TAN, String PAN, String GST, String Address, String City, String State, String Country, String Pincode) throws InterruptedException {
 		OrganizationSetting.enterd_tax_details_should_be_save(TaxTypes,TAN, PAN,GST, Address, City, State, Country, Pincode);
+	}
+	
+	@When("I select timezone from the dropdown {string}")
+	public void i_select_timezone_from_the_dropdown(String string) throws InterruptedException {
+		OrganizationSetting.Change_timezone(string);
+	}
+	@When("I click the Save button on timezone")
+	public void i_click_the_save_button_on_timezone() throws InterruptedException {
+		OrganizationSetting.click_save_button_on_timezone();
+	}
+	@Then("the selected timezone should be displayed {string}")
+	public void the_selected_timezone_should_be_displayed(String string) throws InterruptedException {
+		OrganizationSetting.verify_selected_timezone(string);
+	}
+	@Then("selected timezone should be displaye in add team member form {string}")
+	public void selected_timezone_should_be_displaye_in_add_team_member_form(String string) throws InterruptedException {
+		Dashboard.clickmainManu();
+		Dashboard.clickTeamMember();
+		team.Click_add_team_member_btn();
+		team.get_default_timezone(string);
+	}
+	
+	@Given("I see the current Timezone displayed")
+	public void i_see_the_current_timezone_displayed() {
+		OrganizationSetting.getcurrenttimezone();
+	}
+	@When("I click the Cancel button")
+	public void i_click_the_cancel_button() throws InterruptedException {
+		OrganizationSetting.click_cancell_button_on_timezone();
+	}
+	@Then("the previous timezone should be displayed")
+	public void the_previous_timezone_should_be_displayed() {
+		OrganizationSetting.verfiyoldtimezone();
 	}
 	
 	

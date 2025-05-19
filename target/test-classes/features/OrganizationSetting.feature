@@ -71,39 +71,39 @@ Feature: Verify Organization Setting Functionality
       | EEE, dd/MM/yyyy |
       | dd/MM/yyyy      |
 
-  #pensing dev(timezone is not scrollable )
-  @Timezone123
+  @Timezone123asd
   Scenario Outline: Update Timezone
     Given I am on the Organization Settings page
-    And I see the current Timezone displayed
     When I click the edit icon to select new Timezone
-    And I select "<New_Timezone>" timezone from the dropdown
+    And I select timezone from the dropdown "<New_Timezone>"
     And I click the Save button on timezone
-    Then the timezone should be updated successfully
-    And the selected timezone should be displayed
+    Then the selected timezone should be displayed "<New_Timezone>"
+    And selected timezone should be displaye in add team member form "<New_Timezone>"
 
     Examples: 
-      | New_Timezone     |
-      | America/New_York |
-      #| Europe/London    |
-      #| Asia/Dubai       |
+      | New_Timezone       |
+      | Africa/Abidjan     |
+      | Africa/Accra       |
+      | Africa/Addis_Ababa |
+      | Africa/Algiers     |
+      | Africa/Asmara      |
 
-  #pensing dev(timezone is not scrollable )
-  @fdgbjk
+  @Timezone123asd
   Scenario Outline: Cancel Editing the Timezone
     Given I am on the Organization Settings page
     And I see the current Timezone displayed
-    When I click the edit icon next to Timezone
+    When I click the edit icon to select new Timezone
     And I select "<New_Timezone>" from the dropdown
     And I click the Cancel button
-    Then the timezone should remain unchanged
-    And the previous timezone should be displayed
+    Then the previous timezone should be displayed
 
     Examples: 
-      | New_Timezone     |
-      | America/New_York |
-      #| Europe/London    |
-      #| Asia/Dubai       |
+      | New_Timezone       |
+      | Africa/Abidjan     |
+      | Africa/Accra       |
+      | Africa/Addis_Ababa |
+      | Africa/Algiers     |
+      | Africa/Asmara      |
 
   @Add_Work_location
   Scenario Outline: Add a new work location

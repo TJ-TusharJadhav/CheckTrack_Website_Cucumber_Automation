@@ -1,5 +1,8 @@
 package stepDefinitions;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+
 import base.BaseClass;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -93,6 +96,39 @@ public class LeaveTypesSteps extends BaseClass{
 	}
 	@Then("New leave type should be added successfully with type name and policy {string} Number: {int} {string} {int}")
 	public void new_leave_type_should_be_added_successfully_with_type_name_and_policy_number(String string, Integer int1, String string2, Integer int2) {
+	}
+	
+	@Then("I should see an error message Type is required")
+	public void i_should_see_an_error_message_type_is_required() throws InterruptedException {
+		LeaveTypes.verfiy_Empty_leave_type_error_message();
+	}
+	@When("I click on the Cancel button")
+	public void i_click_on_the_cancel_button() throws InterruptedException {
+		LeaveTypes.clickcancelBtn();
+	}
+	@Then("I should be redirected back to the Leave Types page")
+	public void i_should_be_redirected_back_to_the_leave_types_page() throws InterruptedException {
+		LeaveTypes.verfiy_leaveTypePage();
+		
+	}
+	@When("I chnage the leave type name and policy {string} {string}")
+	public void i_chnage_the_leave_type_name_and_policy(String name, String policy) throws InterruptedException {
+		LeaveTypes.edit_leaveTypeAndPolicy(name, policy);
+	    
+	}
+	@Then("leave type should be edit successfully with type name and policy {string} {string}")
+	public void leave_type_should_be_edit_successfully_with_type_name_and_policy(String leaveTypeName, String policy) throws InterruptedException {
+		LeaveTypes.verfiy_new_leave_type(leaveTypeName, policy);
+	   
+	}
+	@Then("the Balance tracked checkbox should be disabled and not editable")
+	public void the_balance_tracked_checkbox_should_be_disabled_and_not_editable() throws InterruptedException {
+		LeaveTypes.validation_paid_BalanceTracked_leave1();
+	    
+	}
+	@Then("the negative balance allowed checkboxs should be disabled and not editable")
+	public void the_negative_balance_allowed_checkboxs_should_be_disabled_and_not_editable() throws InterruptedException {
+		LeaveTypes.validation_paid_negative_balance_leave1();
 	}
 
 }

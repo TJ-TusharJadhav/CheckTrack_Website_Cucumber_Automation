@@ -22,3 +22,47 @@ Feature: Verify Forgot Password Functionality
     Examples: 
       | Email                   |
       | ctforgotpass@yopmail.com |
+      
+# this not possible becouse info/error is allready present 
+   Scenario: Show error when password is less than six characters
+   Given the user is neviget Forgot Password page
+    When the user enters an registered Email and click continue button "ctforgotpass@yopmail.com"
+    Then a confirmation message Password reset link has been sent to your registered email should be displayed
+    When the user opens the Set Password link sent via email "ctforgotpass@yopmail.com"
+    When the user enters "abc" in the Password field
+    And enters "abc" in the Confirm Password field
+    And clicks the Set Password button
+    Then the system should display a message Password must be at least six characters long.
+    
+   # this not possible becouse info/error is allready present
+   Scenario: Show error when password and confirm password do not match
+     Given the user is neviget Forgot Password page
+    When the user enters an registered Email and click continue button "ctforgotpass@yopmail.com"
+    Then a confirmation message Password reset link has been sent to your registered email should be displayed
+    When the user opens the Set Password link sent via email "ctforgotpass@yopmail.com"
+    And the user enters "abc123" in the Password field
+    And enters "abc124" in the Confirm Password field
+    And clicks the Set Password button
+    Then the system should display a message Password must match
+    
+    @sdfgset
+     Scenario: Show error when password is empty
+    Given the user is neviget Forgot Password page
+    When the user enters an registered Email and click continue button "ctforgotpass@yopmail.com"
+    Then a confirmation message Password reset link has been sent to your registered email should be displayed
+    When the user opens the Set Password link sent via email "ctforgotpass@yopmail.com"
+    When the user leaves the Password field empty
+    And enters "abc123" in the Confirm Password field
+    And clicks the Set Password button
+    Then the system should display a message Password must be entered
+    
+@sdfgset
+  Scenario: Show error when confirm password is empty
+    Given the user is neviget Forgot Password page
+    When the user enters an registered Email and click continue button "ctforgotpass@yopmail.com"
+    Then a confirmation message Password reset link has been sent to your registered email should be displayed
+    When the user opens the Set Password link sent via email "ctforgotpass@yopmail.com"
+    When the user enters "abc123" in the Password field
+    And leaves the Confirm Password field empty
+    And clicks the Set Password button
+    Then the system should display a message Confirm Password must be entered

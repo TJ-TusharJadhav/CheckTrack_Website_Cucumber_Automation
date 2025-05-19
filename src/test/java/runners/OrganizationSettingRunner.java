@@ -7,7 +7,7 @@ import io.cucumber.testng.CucumberOptions;
         features = "src/test/java/features/OrganizationSetting.feature",
         glue = {"stepDefinitions", "hooks"},
         plugin = {"pretty", "html:target/OrganizationSetting-reports.html"}
-       ,tags = "@Timezone123"
+       ,tags = "@Timezone123asd"
 		)
 public class OrganizationSettingRunner extends AbstractTestNGCucumberTests{
 

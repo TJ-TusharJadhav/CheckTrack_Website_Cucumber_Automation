@@ -109,5 +109,30 @@ public class Forgot_passwordPage extends BaseClass {
 		        Thread.sleep(2000);
 		        Assert.assertEquals(Actual , expected);
 		    }
-
+		 public void enter_password(String pass) {
+			 driver.findElement(By.xpath("//input[@aria-label='Password']")).sendKeys(pass);
+		 }
+		 public void enter_Conform_password(String pass) {
+			 driver.findElement(By.xpath("//input[@aria-label='Confirm Password']")).sendKeys(pass);
+		 }
+		 
+		 public void click_set_password() throws InterruptedException {
+			 driver.findElement(By.xpath("//flt-semantics[@aria-label='SET PASSWORD']")).click();
+		        Thread.sleep(1000);
+		 }
+		 public void verifyEmptyPasswordfield() {
+			 String Actual =driver.findElement(By.xpath("//flt-semantics[@aria-label='Password cannot be blank']")).getDomAttribute("aria-label");
+			 String expected ="Password cannot be blank";
+			 Assert.assertEquals(Actual , expected);
+		 }
+//		 use this after change error message in flutter
+		 public void verifyEmptyConfirmPasswordfield() {
+			 String Actual =driver.findElement(By.xpath("//flt-semantics[@aria-label='Password cannot be blank']")).getDomAttribute("aria-label");
+			 String expected ="Password cannot be blank";
+			 
+//			 String Actual =driver.findElement(By.xpath("//flt-semantics[@aria-label='Confirm Password cannot be blank']")).getDomAttribute("aria-label");
+//			 String expected ="Confirm Password cannot be blank";
+			 Assert.assertEquals(Actual , expected);
+		 }
+		
 }
